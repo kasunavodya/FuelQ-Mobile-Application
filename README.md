@@ -6,8 +6,8 @@ EAD - Assignment (Y4S2)
 **Member Details :**
 | Name | Student ID | Username |
 |--|--|--|
-| Dilshan K.G.T | IT19020822 | |
-| Alwis T.A.D.T.N.D | IT19016108 | |
+| Dilshan K.G.T | IT19020822 | it19020822 |
+| Alwis T.A.D.T.N.D | IT19016108 | tharushikadealwis |
 | H.M. Kasuni Navodya | IT19144986 | kasunavodya |
 
 ## Project Description
