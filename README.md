@@ -1,5 +1,5 @@
 # FuelQ-Mobile-Application
-EAD - Assignment (Y4S2)
+EAD - Assignment(Y4S2)
 
 ### Group Details
 
