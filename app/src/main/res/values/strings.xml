@@ -1,3 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FuelQ</string>
+    <string name="main_topic">FuelQ</string>
+    <string name="login_topic">LOG IN TO YOUR ACCOUNT</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="fp_link">Forgot Password</string>
+    <string name="login_btn">Login</string>
+    <string name="signIn_link">Sign In</string>
+    <string name="req_text">*</string>
+    <string name="customer_reg_btn">Customer Registration</string>
+    <string name="shedOwner_reg_btn">Shed Owner Registration</string>
+    <string name="register_topic">CREATE YOUR ACCOUNT</string>
+    <string name="reEnterPassword">Re-enter Password</string>
+    <string name="vehNumber">Vehicle Number</string>
+    <string name="vehType">Vehicle Type</string>
+    <string name="fuelType">Fuel Type</string>
+    <string name="reg_btn">Create Account</string>
 </resources>
