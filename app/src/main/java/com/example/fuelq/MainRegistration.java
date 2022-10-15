@@ -1,21 +1,22 @@
 package com.example.fuelq;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainRegistration extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_registration);
 
-        final TextView TitleView = (TextView) findViewById(R.id.txt_topic);
-        TitleView.setOnClickListener(view -> {
+        final Button reg1Btn = (Button) findViewById(R.id.btn_customerReg);
+        reg1Btn.setOnClickListener(view -> {
 
             Context context = getApplicationContext();
             CharSequence message = "Welcome to FuelQ Application";
@@ -24,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(context, message, duration);
             toast.show();
 
-            Intent activityIntent = new Intent(MainActivity.this, CustomerLogin.class);
-            MainActivity.this.startActivity(activityIntent);
+            Intent activityIntent = new Intent(MainRegistration.this, CustomerRegistration.class);
+            MainRegistration.this.startActivity(activityIntent);
 
         });
     }
