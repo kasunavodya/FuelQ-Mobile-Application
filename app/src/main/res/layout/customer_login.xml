@@ -172,7 +172,7 @@
     <Button
         android:id="@+id/btn_login"
         android:layout_width="326dp"
-        android:layout_height="58dp"
+        android:layout_height="48dp"
         android:textSize="20sp"
         android:text="@string/login_btn"
         app:backgroundTint="#1E48DF"

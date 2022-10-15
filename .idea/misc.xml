@@ -12,6 +12,10 @@
         <entry key="..\:/SLIIT/SampleGit/android apps/FuelQ-Mobile-Application/app/src/main/res/layout/customer_registration.xml" value="0.264" />
         <entry key="..\:/SLIIT/SampleGit/android apps/FuelQ-Mobile-Application/app/src/main/res/layout/main_registration.xml" value="0.2375" />
         <entry key="..\:/SLIIT/SampleGit/android apps/FuelQ-Mobile-Application/app/src/main/res/layout/owner_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/SampleGit/android apps/FuelQ-Mobile-Application/app/src/main/res/layout/shed_owner_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/SampleGit/android apps/FuelQ-Mobile-Application/app/src/main/res/layout/update_fuel_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/SampleGit/android apps/FuelQ-Mobile-Application/app/src/main/res/layout/view_customer_queue_details.xml" value="0.264" />
+        <entry key="..\:/SLIIT/SampleGit/android apps/FuelQ-Mobile-Application/app/src/main/res/layout/view_owner_fuel_details.xml" value="0.264" />
       </map>
     </option>
   </component>

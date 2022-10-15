@@ -16,4 +16,20 @@
     <string name="vehType">Vehicle Type</string>
     <string name="fuelType">Fuel Type</string>
     <string name="reg_btn">Create Account</string>
+    <string name="ownerFuel_btn">View Owner and Fuel Details</string>
+    <string name="queue_btn">View Queue Details</string>
+    <string name="shed_id">Fuel Station 001</string>
+    <string name="shed_name">Piliyandala Shed Station</string>
+    <string name="shed_owner_name">Mr. Saman Perera</string>
+    <string name="shed_contact">0114567772</string>
+    <string name="octane">OCTANE 95</string>
+    <string name="arriving_litres">Litres Arriving</string>
+    <string name="remaining_litres">Litres Remaining</string>
+    <string name="litres1">6600 L</string>
+    <string name="litres2">4500 L</string>
+    <string name="dateTime">Date/Time</string>
+    <string name="updateDetails">Update Details</string>
+    <string name="van">VAN</string>
+    <string name="tot">Total:</string>
+    <string name="ten">10</string>
 </resources>
