@@ -2,7 +2,7 @@ package com.example.fuelq;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
+//MainActivity File
 public class MainActivity extends AppCompatActivity {
 
     @Override
