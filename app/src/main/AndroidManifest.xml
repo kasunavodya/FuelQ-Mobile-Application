@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuelQ" >
+        <activity android:name=".ViewQueueDetails" />
+        <activity android:name=".ViewOwnerFuelDetails" />
+        <activity android:name=".CustomerHome" />
+        <activity android:name=".ShedOwnerHome" />
+        <activity android:name=".UpdateFuelDetails" />
+        <activity android:name=".OwnerRegistration" />
         <activity android:name=".CustomerRegistration" />
         <activity android:name=".MainRegistration" />
         <activity android:name=".CustomerLogin" />

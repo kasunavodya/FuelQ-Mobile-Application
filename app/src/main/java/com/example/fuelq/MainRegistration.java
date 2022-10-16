@@ -18,14 +18,15 @@ public class MainRegistration extends AppCompatActivity {
         final Button reg1Btn = (Button) findViewById(R.id.btn_customerReg);
         reg1Btn.setOnClickListener(view -> {
 
-            Context context = getApplicationContext();
-            CharSequence message = "Welcome to FuelQ Application";
-            //Display string
-            int duration = Toast.LENGTH_SHORT; //How long the toast message will lasts
-            Toast toast = Toast.makeText(context, message, duration);
-            toast.show();
-
             Intent activityIntent = new Intent(MainRegistration.this, CustomerRegistration.class);
+            MainRegistration.this.startActivity(activityIntent);
+
+        });
+
+        final Button reg2Btn = (Button) findViewById(R.id.btn_shedOwner_reg);
+        reg2Btn.setOnClickListener(view -> {
+
+            Intent activityIntent = new Intent(MainRegistration.this, OwnerRegistration.class);
             MainRegistration.this.startActivity(activityIntent);
 
         });
