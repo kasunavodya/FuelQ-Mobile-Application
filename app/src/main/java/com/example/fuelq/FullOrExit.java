@@ -1,0 +1,30 @@
+package com.example.fuelq;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class FullOrExit extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.full_or_exit);
+
+        final Button btnFull = (Button) findViewById(R.id.btn_full);
+        btnFull.setOnClickListener(view -> {
+
+            Intent activityIntent = new Intent(FullOrExit.this, AddFeedback.class);
+            FullOrExit.this.startActivity(activityIntent);
+        });
+
+        final Button btnExit2 = (Button) findViewById(R.id.btn_exit);
+        btnExit2.setOnClickListener(view -> {
+
+            Intent activityIntent = new Intent(FullOrExit.this, CustomerHome.class);
+            FullOrExit.this.startActivity(activityIntent);
+        });
+    }
+}
