@@ -32,4 +32,14 @@
     <string name="van">VAN</string>
     <string name="tot">Total:</string>
     <string name="ten">10</string>
+    <string name="contact">Contact Number</string>
+    <string name="station_name">Fuel Station Name</string>
+    <string name="station_id">Fuel Station ID</string>
+    <string name="location">Location</string>
+    <string name="ownerName">Owner Name</string>
+    <string name="feedback1">How was your</string>
+    <string name="feedback2">Experience..</string>
+    <string name="rate_btn">RATE</string>
+    <string name="check_btn">CHECK</string>
+    <string name="fuel_station">Fuel Station</string>
 </resources>
