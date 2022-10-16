@@ -5,19 +5,35 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/main_topic"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuelQ" >
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" >
+        <activity android:name=".DeleteConfirmation" />
+        <activity android:name=".AddFeedback" />
+        <activity android:name=".FullOrExit" />
+        <activity android:name=".ViewFuelDetails" />
+        <activity android:name=".ReqFuelVolume" />
+        <activity android:name=".ViewQueueFuelDetails" />
+        <activity android:name=".ViewQueueDetails" />
+        <activity android:name=".ViewOwnerFuelDetails" />
+        <activity android:name=".CustomerHome" />
+        <activity android:name=".ShedOwnerHome" />
+        <activity android:name=".UpdateFuelDetails" />
+        <activity android:name=".OwnerRegistration" />
+        <activity android:name=".CustomerRegistration" />
+        <activity android:name=".MainRegistration" />
+        <activity android:name=".CustomerLogin" />
+        <activity android:name=".MainActivity" android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
