@@ -12,9 +12,15 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_owner_fuel_details);
 
-        final ImageView reg1Btn = (ImageView) findViewById(R.id.img_edit);
-        reg1Btn.setOnClickListener(view -> {
+        final ImageView imgEdit = (ImageView) findViewById(R.id.img_edit);
+        imgEdit.setOnClickListener(view -> {
             Intent activityIntent = new Intent(ViewOwnerFuelDetails.this, UpdateFuelDetails.class);
+            ViewOwnerFuelDetails.this.startActivity(activityIntent);
+        });
+
+        final ImageView imgDelete = (ImageView) findViewById(R.id.img_delete);
+        imgDelete.setOnClickListener(view -> {
+            Intent activityIntent = new Intent(ViewOwnerFuelDetails.this, DeleteConfirmation.class);
             ViewOwnerFuelDetails.this.startActivity(activityIntent);
         });
     }
