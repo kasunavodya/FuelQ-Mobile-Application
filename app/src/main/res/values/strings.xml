@@ -19,7 +19,7 @@
     <string name="ownerFuel_btn">View Owner and Fuel Details</string>
     <string name="queue_btn">View Queue Details</string>
     <string name="shed_id">Fuel Station 001</string>
-    <string name="shed_name">Piliyandala Shed Station</string>
+    <string name="shed_name">Piliyandala Fuel Station</string>
     <string name="shed_owner_name">Mr. Saman Perera</string>
     <string name="shed_contact">0114567772</string>
     <string name="octane">OCTANE 95</string>
@@ -42,4 +42,21 @@
     <string name="rate_btn">RATE</string>
     <string name="check_btn">CHECK</string>
     <string name="fuel_station">Fuel Station</string>
+    <string name="btn_available">Available</string>
+    <string name="current_q">Current Queue Number</string>
+    <string name="q_number">25</string>
+    <string name="fuel_vol">Available Fuel Volume</string>
+    <string name="btn_join">JOIN QUEUE</string>
+    <string name="btn_exit">EXIT WITHOUT PUMP</string>
+    <string name="req_vol">Requested Fuel Vol.</string>
+    <string name="btn_pump">PUMP</string>
+    <string name="q_num">Queue Number</string>
+    <string name="wait">Time to Wait</string>
+    <string name="wait_time">2hr 30min</string>
+    <string name="btn_wait">LET ME WAIT</string>
+    <string name="btn_full">I AM FULL</string>
+    <string name="btn_delete">DELETE ANYWAY</string>
+    <string name="btn_cancel">CANCEL</string>
+    <string name="delete_msg1">Are you sure you want to</string>
+    <string name="delete_msg2">delete this item?</string>
 </resources>

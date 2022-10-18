@@ -18,7 +18,6 @@ public class CustomerRegistration extends AppCompatActivity {
 
             Intent activityIntent = new Intent(CustomerRegistration.this, CustomerHome.class);
             CustomerRegistration.this.startActivity(activityIntent);
-
         });
     }
 }
