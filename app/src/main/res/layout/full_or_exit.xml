@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/img_time"
-        android:layout_width="331dp"
-        android:layout_height="327dp"
+        android:layout_width="134dp"
+        android:layout_height="84dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
