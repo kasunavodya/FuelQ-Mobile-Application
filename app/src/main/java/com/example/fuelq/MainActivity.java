@@ -1,11 +1,11 @@
 package com.example.fuelq;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,45 +14,40 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
+
+    String api = "http://192.168.1.2:5000/api/Customer";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String URL = "https://localhost:7060/api/Customer";
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JsonObjectRequest objectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                URL,
-                null,
-                response -> Log.e("Rest Response", response.toString()),
-                new Response.ErrorListener() {
+        getData();
+    }
+
+    private void getData() {
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, api,
+                new Response.Listener<String>() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("Rest Response", error.toString());
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        Log.e("api", "onErrorResponse: "+response.toString());
                     }
-                }
-        );
-
-        requestQueue.add(objectRequest);
-
-        final TextView TitleView = (TextView) findViewById(R.id.txt_topic);
-        TitleView.setOnClickListener(view -> {
-
-            Context context = getApplicationContext();
-            CharSequence message = "Welcome to FuelQ Application";
-            //Display string
-            int duration = Toast.LENGTH_SHORT; //How long the toast message will lasts
-            Toast toast = Toast.makeText(context, message, duration);
-            toast.show();
-
-            Intent activityIntent = new Intent(MainActivity.this, CustomerLogin.class);
-            MainActivity.this.startActivity(activityIntent);
-
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("api", "onErrorResponse: "+error.getLocalizedMessage());
+            }
         });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+
     }
 }
