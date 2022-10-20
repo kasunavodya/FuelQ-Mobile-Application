@@ -13,7 +13,7 @@ public class OwnerRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.owner_registration);
 
-        final Button BtnOwnerReg = (Button) findViewById(R.id.btn_reg);
+        final Button BtnOwnerReg = findViewById(R.id.btn_reg);
         BtnOwnerReg.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(OwnerRegistration.this, ShedOwnerHome.class);
