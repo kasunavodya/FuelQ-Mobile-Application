@@ -13,7 +13,7 @@ public class ReqFuelVolume extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.req_fuel_volume);
 
-        final Button btnPump = (Button) findViewById(R.id.btn_pump);
+        final Button btnPump = findViewById(R.id.btn_pump);
         btnPump.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(ReqFuelVolume.this, ViewFuelDetails.class);

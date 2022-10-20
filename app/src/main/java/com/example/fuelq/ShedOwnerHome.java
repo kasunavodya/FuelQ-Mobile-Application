@@ -12,7 +12,7 @@ public class ShedOwnerHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shed_owner_home);
 
-        final Button BtnFuelDetails = (Button) findViewById(R.id.btn_ownerFuel);
+        final Button BtnFuelDetails = findViewById(R.id.btn_ownerFuel);
         BtnFuelDetails.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(ShedOwnerHome.this, ViewOwnerFuelDetails.class);
@@ -20,7 +20,7 @@ public class ShedOwnerHome extends AppCompatActivity {
 
         });
 
-        final Button BtnQueueDetails = (Button) findViewById(R.id.btn_queue);
+        final Button BtnQueueDetails = findViewById(R.id.btn_queue);
         BtnQueueDetails.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(ShedOwnerHome.this, ViewQueueDetails.class);

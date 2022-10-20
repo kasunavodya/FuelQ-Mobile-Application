@@ -13,14 +13,14 @@ public class DeleteConfirmation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirm_delete);
 
-        final Button BtnDelete = (Button) findViewById(R.id.btn_delete);
+        final Button BtnDelete = findViewById(R.id.btn_delete);
         BtnDelete.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(DeleteConfirmation.this, ViewOwnerFuelDetails.class);
             DeleteConfirmation.this.startActivity(activityIntent);
         });
 
-        final Button BtnCancel = (Button) findViewById(R.id.btn_cancel);
+        final Button BtnCancel = findViewById(R.id.btn_cancel);
         BtnCancel.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(DeleteConfirmation.this, ViewOwnerFuelDetails.class);

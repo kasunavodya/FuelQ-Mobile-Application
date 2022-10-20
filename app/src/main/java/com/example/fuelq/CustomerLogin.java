@@ -13,14 +13,14 @@ public class CustomerLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_login);
 
-        final TextView SignInView = (TextView) findViewById(R.id.txt_signIn2);
+        final TextView SignInView = findViewById(R.id.txt_signIn2);
         SignInView.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(CustomerLogin.this, MainRegistration.class);
             CustomerLogin.this.startActivity(activityIntent);
         });
 
-        final Button btnLogin = (Button) findViewById(R.id.btn_login);
+        final Button btnLogin = findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(CustomerLogin.this, CustomerHome.class);
