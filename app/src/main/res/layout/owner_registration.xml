@@ -148,7 +148,7 @@
         app:layout_constraintVertical_bias="0.82" />
 
     <EditText
-        android:id="@+id/editTxt_password"
+        android:id="@+id/customerPassword"
         android:layout_width="322dp"
         android:layout_height="48dp"
         android:background="#4D1E48DF"
@@ -178,7 +178,7 @@
         app:layout_constraintVertical_bias="0.516" />
 
     <EditText
-        android:id="@+id/editTxtEmailAddress"
+        android:id="@+id/customerEmail"
         android:layout_width="323dp"
         android:layout_height="48dp"
         android:background="#4D1E48DF"
@@ -208,7 +208,7 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <EditText
-        android:id="@+id/editTxtVehNumber"
+        android:id="@+id/customerVehicleNumber"
         android:layout_width="322dp"
         android:layout_height="48dp"
         android:background="#4D1E48DF"

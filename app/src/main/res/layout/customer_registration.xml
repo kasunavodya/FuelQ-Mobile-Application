@@ -7,6 +7,62 @@
     android:background="@android:color/white"
     tools:context=".MainActivity">
 
+<!--    <EditText-->
+<!--        android:id="@+id/customerVehicleType"-->
+<!--        android:layout_width="322dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:background="#4D1E48DF"-->
+<!--        android:ems="10"-->
+<!--        android:hint="  Enter Vehicle Type"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.449"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.718" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/customerFuelType"-->
+<!--        android:layout_width="322dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:background="#4D1E48DF"-->
+<!--        android:ems="10"-->
+<!--        android:hint="  Enter Fuel Type"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.449"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.856" />-->
+
+    <Spinner
+        android:id="@+id/customerVehicleType"
+        android:layout_width="322dp"
+        android:layout_height="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.718"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/customerFuelType"
+        android:layout_width="322dp"
+        android:layout_height="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
     <TextView
         android:id="@+id/txt_RegTitle"
         android:layout_width="wrap_content"
@@ -119,7 +175,7 @@
         app:layout_constraintVertical_bias="0.793" />
 
     <EditText
-        android:id="@+id/editTxt_password"
+        android:id="@+id/customerPassword"
         android:layout_width="322dp"
         android:layout_height="48dp"
         android:background="#4D1E48DF"
@@ -149,7 +205,7 @@
         app:layout_constraintVertical_bias="0.439" />
 
     <EditText
-        android:id="@+id/editTxtEmailAddress"
+        android:id="@+id/customerEmail"
         android:layout_width="323dp"
         android:layout_height="48dp"
         android:background="#4D1E48DF"
@@ -179,7 +235,7 @@
         app:layout_constraintVertical_bias="0.96" />
 
     <EditText
-        android:id="@+id/editTxtVehNumber"
+        android:id="@+id/customerVehicleNumber"
         android:layout_width="322dp"
         android:layout_height="48dp"
         android:background="#4D1E48DF"
@@ -192,31 +248,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.576" />
-
-    <Spinner
-        android:id="@+id/spinner_vehType"
-        android:layout_width="322dp"
-        android:layout_height="48dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
-    <Spinner
-        android:id="@+id/spinner_fuelType"
-        android:layout_width="322dp"
-        android:layout_height="48dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

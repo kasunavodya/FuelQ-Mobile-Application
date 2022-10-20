@@ -26,6 +26,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final TextView TitleView = (TextView) findViewById(R.id.txt_topic);
+        TitleView.setOnClickListener(view -> {
+
+            Context context = getApplicationContext();
+            CharSequence message = "Welcome to FuelQ Application";
+            //Display string
+            int duration = Toast.LENGTH_SHORT; //How long the toast message will lasts
+            Toast toast = Toast.makeText(context, message, duration);
+            toast.show();
+
+            Intent activityIntent = new Intent(MainActivity.this, CustomerLogin.class);
+            MainActivity.this.startActivity(activityIntent);
+
+        });
+
         getData();
     }
 
@@ -50,4 +65,8 @@ public class MainActivity extends AppCompatActivity {
         queue.add(stringRequest);
 
     }
+
+
+
+
 }
