@@ -13,7 +13,7 @@ public class ViewFuelDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_fuel_details);
 
-        final Button btnWait = (Button) findViewById(R.id.btn_wait);
+        final Button btnWait = findViewById(R.id.btn_wait);
         btnWait.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(ViewFuelDetails.this, FullOrExit.class);
@@ -21,7 +21,7 @@ public class ViewFuelDetails extends AppCompatActivity {
 
         });
 
-        final Button btnExit2 = (Button) findViewById(R.id.btn_exit);
+        final Button btnExit2 = findViewById(R.id.btn_exit);
         btnExit2.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(ViewFuelDetails.this, CustomerHome.class);

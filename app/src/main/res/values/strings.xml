@@ -29,6 +29,7 @@
     <string name="litres2">4500 L</string>
     <string name="dateTime">Date/Time</string>
     <string name="updateDetails">Update Details</string>
+    <string name="addDetails">Add Details</string>
     <string name="van">VAN</string>
     <string name="tot">Total:</string>
     <string name="ten">10</string>
@@ -59,4 +60,6 @@
     <string name="btn_cancel">CANCEL</string>
     <string name="delete_msg1">Are you sure you want to</string>
     <string name="delete_msg2">delete this item?</string>
+    <string name="test">Testing</string>
+    <string name="float_btn">Add</string>
 </resources>

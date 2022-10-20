@@ -16,14 +16,14 @@ public class FullOrExit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.full_or_exit);
 
-        final Button btnFull = (Button) findViewById(R.id.btn_full);
+        final Button btnFull = findViewById(R.id.btn_full);
         btnFull.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(FullOrExit.this, AddFeedback.class);
             FullOrExit.this.startActivity(activityIntent);
         });
 
-        final Button btnExit2 = (Button) findViewById(R.id.btn_exit);
+        final Button btnExit2 = findViewById(R.id.btn_exit);
         btnExit2.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(FullOrExit.this, CustomerHome.class);

@@ -15,7 +15,7 @@ public class MainRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_registration);
 
-        final Button reg1Btn = (Button) findViewById(R.id.btn_customerReg);
+        final Button reg1Btn = findViewById(R.id.btn_customerReg);
         reg1Btn.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(MainRegistration.this, CustomerRegistration.class);
@@ -23,7 +23,7 @@ public class MainRegistration extends AppCompatActivity {
 
         });
 
-        final Button reg2Btn = (Button) findViewById(R.id.btn_shedOwner_reg);
+        final Button reg2Btn = findViewById(R.id.btn_shedOwner_reg);
         reg2Btn.setOnClickListener(view -> {
 
             Intent activityIntent = new Intent(MainRegistration.this, OwnerRegistration.class);
