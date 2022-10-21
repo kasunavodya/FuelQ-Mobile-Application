@@ -3,8 +3,12 @@ package com.example.fuelq;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.NetworkResponse;
@@ -19,22 +23,47 @@ import com.example.fuelq.EndPoints.EndPointURL;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+import java.util.List;
 
 public class OwnerRegistration extends AppCompatActivity {
 
-    private EditText ownerName, ownerEmail, ownerPassword, ownerContact, ownerFuelStation, ownerLocation;
+    private EditText ownerName, ownerEmail, ownerPassword, ownerContact, ownerFuelStation;
+    private String ownerLocation;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.owner_registration);
+
+        final List<String> locationType = Arrays.asList("Colombo", "Dehiwala", "Mount Lavinia", "Moratuwa", "Sri Jayawardenepura Kotte", "Negombo", "Kandy", "Kalmunai", "Vavuniya", "Galle", "Trincomalee", "Batticaloa", "Jaffna", "Matale", "Katunayake", "Dambulla", "Kolonnawa", "Anuradhapura", "Ratnapura");
+
+        final Spinner spinnerLocation = findViewById(R.id.spinnerLocation);
         ownerName = findViewById(R.id.editTextTextPersonName);
         ownerEmail = findViewById(R.id.editTxtEmailAddress);
         ownerPassword = findViewById(R.id.editTxt_password);
         ownerContact = findViewById(R.id.editTxtVehNumber);
         ownerFuelStation = findViewById(R.id.editTxtStationName);
-        ownerLocation = findViewById(R.id.editTxtLocation);
+
+        ArrayAdapter adapterLocation = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, locationType);
+        adapterLocation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerLocation.setAdapter(adapterLocation);
+
+        spinnerLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ownerLocation = spinnerLocation.getSelectedItem().toString();
+                //Toast.makeText(getApplicationContext(), "You selected: " + customerFuelType, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         final Button BtnOwnerReg = findViewById(R.id.btn_reg);
         BtnOwnerReg.setOnClickListener(view -> {
@@ -42,7 +71,7 @@ public class OwnerRegistration extends AppCompatActivity {
             OwnerRegistration.this.startActivity(activityIntent);
 
             // calling a method to post the data and passing our name and job.
-            postDataUsingVolley(ownerName.getText().toString(), ownerEmail.getText().toString(), ownerPassword.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation.getText().toString());
+            postDataUsingVolley(ownerName.getText().toString(), ownerEmail.getText().toString(), ownerPassword.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation);
             Toast.makeText(OwnerRegistration.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
         });
     }
