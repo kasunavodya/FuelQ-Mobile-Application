@@ -20,14 +20,15 @@
     <string name="queue_btn">View Queue Details</string>
     <string name="shed_id">Fuel Station 001</string>
     <string name="shed_name">Piliyandala Fuel Station</string>
-    <string name="shed_owner_name">Mr. Saman Perera</string>
+    <string name="shed_owner_name">Saman Perera</string>
     <string name="shed_contact">0114567772</string>
     <string name="octane">OCTANE 95</string>
     <string name="arriving_litres">Litres Arriving</string>
     <string name="remaining_litres">Litres Remaining</string>
     <string name="litres1">6600 L</string>
     <string name="litres2">4500 L</string>
-    <string name="dateTime">Date/Time</string>
+    <string name="date">Arriving Date</string>
+    <string name="time">Arriving Time</string>
     <string name="updateDetails">Update Details</string>
     <string name="addDetails">Add Details</string>
     <string name="van">VAN</string>

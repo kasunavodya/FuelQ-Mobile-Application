@@ -10,9 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,17 +20,15 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.fuelq.EndPoints.EndPointURL;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.List;
 
 public class AddFuelDetails extends AppCompatActivity {
 
-    private EditText date, arrivedLitres;
+    private EditText arrivingDate, arrivingTime, arrivedLitres;
     private String fuelType;
 
     @Override
@@ -44,7 +40,8 @@ public class AddFuelDetails extends AppCompatActivity {
 
         final Spinner spinnerFuelType = findViewById(R.id.spinner_fuelType);
 
-        date = findViewById(R.id.editTxt_dateTime);
+        arrivingDate = findViewById(R.id.editTxt_date);
+        arrivingTime = findViewById(R.id.editTxtTime);
         arrivedLitres = findViewById(R.id.editTxt_arriving);
 
         ArrayAdapter adapterFuelType = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, ownerfuelType);
@@ -66,23 +63,18 @@ public class AddFuelDetails extends AppCompatActivity {
             }
         });
 
-
         final Button btnAddDetails = findViewById(R.id.btn_addDetails);
-//        btnAddDetails.setOnClickListener(view -> {
-//            Intent activityIntent = new Intent(AddFuelDetails.this, ViewOwnerFuelDetails.class);
-//            AddFuelDetails.this.startActivity(activityIntent);
-//        });
         btnAddDetails.setOnClickListener(view -> {
             Intent activityIntent = new Intent(AddFuelDetails.this, ViewOwnerFuelDetails.class);
             AddFuelDetails.this.startActivity(activityIntent);
 
             // calling a method to post the data and passing our name and job.
-            postDataUsingVolley(date.getText().toString(), arrivedLitres.getText().toString(), fuelType);
+            postDataUsingVolley(arrivingDate.getText().toString(), arrivingTime.getText().toString(), arrivedLitres.getText().toString(), fuelType);
             Toast.makeText(AddFuelDetails.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
         });
     }
 
-    private boolean postDataUsingVolley(String date, String arrivedLitres, String fuelType) {
+    private boolean postDataUsingVolley(String arrivingDate, String arrivingTime, String arrivedLitres, String fuelType) {
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
@@ -90,7 +82,8 @@ public class AddFuelDetails extends AppCompatActivity {
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id", null);
-            jsonObject.put("date", date);
+            jsonObject.put("arrivingDate", arrivingDate);
+            jsonObject.put("arrivingTime", arrivingTime);
             jsonObject.put("arrivedLitres", arrivedLitres);
             jsonObject.put("fuelType", fuelType);
             final String mRequestBody = jsonObject.toString();
