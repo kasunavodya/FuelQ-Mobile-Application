@@ -69,7 +69,6 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
                                     jsonObject.getString("ownerPassword"),
                                     jsonObject.getString("ownerContact"),
                                     jsonObject.getString("ownerFuelStation"),
-                                    jsonObject.getString("ownerStationID"),
                                     jsonObject.getString("ownerLocation")
                             );
 

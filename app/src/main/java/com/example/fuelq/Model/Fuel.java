@@ -3,15 +3,15 @@ package com.example.fuelq.Model;
 public class Fuel {
     String fuelType;
     String fuelStation;
-    String date;
+    String arrivingDate;
     String arrivingTime;
     String arrivedLitres;
     String remainLitres;
 
-    public Fuel(String fuelType, String fuelStation, String date, String arrivingTime, String arrivedLitres, String remainLitres) {
+    public Fuel(String fuelType, String fuelStation, String arrivingDate, String arrivingTime, String arrivedLitres, String remainLitres) {
         this.fuelType = fuelType;
         this.fuelStation = fuelStation;
-        this.date = date;
+        this.arrivingDate = arrivingDate;
         this.arrivingTime = arrivingTime;
         this.arrivedLitres = arrivedLitres;
         this.remainLitres = remainLitres;
@@ -33,12 +33,12 @@ public class Fuel {
         this.fuelStation = fuelStation;
     }
 
-    public String getDate() {
-        return date;
+    public String getArrivingDate() {
+        return arrivingDate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setArrivingDate(String arrivingDate) {
+        this.arrivingDate = arrivingDate;
     }
 
     public String getArrivingTime() {

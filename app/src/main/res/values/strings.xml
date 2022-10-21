@@ -27,7 +27,8 @@
     <string name="remaining_litres">Litres Remaining</string>
     <string name="litres1">6600 L</string>
     <string name="litres2">4500 L</string>
-    <string name="dateTime">Date/Time</string>
+    <string name="date">Arriving Date</string>
+    <string name="time">Arriving Time</string>
     <string name="updateDetails">Update Details</string>
     <string name="addDetails">Add Details</string>
     <string name="van">VAN</string>

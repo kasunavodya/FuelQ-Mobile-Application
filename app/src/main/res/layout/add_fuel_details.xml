@@ -10,23 +10,23 @@
 
     <ImageView
         android:id="@+id/img_station"
-        android:layout_width="659dp"
-        android:layout_height="313dp"
+        android:layout_width="613dp"
+        android:layout_height="246dp"
         android:layout_marginBottom="448dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fuel_shed"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/txt_dateTime"
+        android:id="@+id/txt_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dateTime"
+        android:text="@string/date"
         android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,19 +34,34 @@
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.481" />
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
 
     <Spinner
         android:id="@+id/spinner_fuelType"
         android:layout_width="326dp"
         android:layout_height="49dp"
+        android:background="#4D1E48DF"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
+        app:layout_constraintVertical_bias="0.394"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
@@ -58,10 +73,10 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <TextView
         android:id="@+id/txt_litresArriving"
@@ -75,21 +90,22 @@
         app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintVertical_bias="0.728" />
 
     <EditText
-        android:id="@+id/editTxt_dateTime"
+        android:id="@+id/editTxt_date"
         android:layout_width="326dp"
         android:layout_height="49dp"
         android:background="#4D1E48DF"
         android:ems="10"
+        android:hint="  Enter Litres Arriving Date"
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582"
+        app:layout_constraintVertical_bias="0.533"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
@@ -105,7 +121,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.744" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <Button
         android:id="@+id/btn_addDetails"
@@ -117,9 +133,24 @@
         app:backgroundTint="#1E48DF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
+
+    <EditText
+        android:id="@+id/editTxtTime"
+        android:layout_width="326dp"
+        android:layout_height="49dp"
+        android:background="#4D1E48DF"
+        android:ems="10"
+        android:hint="  Enter Litres Arriving Time"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877" />
+        app:layout_constraintVertical_bias="0.668" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

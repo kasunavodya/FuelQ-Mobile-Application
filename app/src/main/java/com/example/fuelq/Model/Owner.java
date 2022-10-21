@@ -6,16 +6,14 @@ public class Owner {
     String ownerPassword;
     String ownerContact;
     String ownerFuelStation;
-    String ownerStationID;
     String ownerLocation;
 
-    public Owner(String ownerName, String ownerEmail, String ownerPassword, String ownerContact, String ownerFuelStation, String ownerStationID, String ownerLocation) {
+    public Owner(String ownerName, String ownerEmail, String ownerPassword, String ownerContact, String ownerFuelStation, String ownerLocation) {
         this.ownerName = ownerName;
         this.ownerEmail = ownerEmail;
         this.ownerPassword = ownerPassword;
         this.ownerContact = ownerContact;
         this.ownerFuelStation = ownerFuelStation;
-        this.ownerStationID = ownerStationID;
         this.ownerLocation = ownerLocation;
     }
 
@@ -57,14 +55,6 @@ public class Owner {
 
     public void setOwnerFuelStation(String ownerFuelStation) {
         this.ownerFuelStation = ownerFuelStation;
-    }
-
-    public String getOwnerStationID() {
-        return ownerStationID;
-    }
-
-    public void setOwnerStationID(String ownerStationID) {
-        this.ownerStationID = ownerStationID;
     }
 
     public String getOwnerLocation() {

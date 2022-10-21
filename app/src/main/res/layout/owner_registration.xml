@@ -89,7 +89,7 @@
         app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.464" />
 
     <TextView
         android:id="@+id/txt_contact"
@@ -120,20 +120,6 @@
         app:layout_constraintVertical_bias="0.706" />
 
     <TextView
-        android:id="@+id/txt_stationID"
-        android:layout_width="136dp"
-        android:layout_height="22dp"
-        android:text="@string/station_id"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
-
-    <TextView
         android:id="@+id/txt_location"
         android:layout_width="136dp"
         android:layout_height="22dp"
@@ -142,7 +128,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.82" />
@@ -175,7 +161,7 @@
         app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintVertical_bias="0.515" />
 
     <EditText
         android:id="@+id/editTxtEmailAddress"
@@ -202,7 +188,7 @@
         app:backgroundTint="#1E48DF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
@@ -232,7 +218,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.139" />
@@ -252,23 +238,8 @@
         app:layout_constraintVertical_bias="0.765" />
 
     <EditText
-        android:id="@+id/editTxtFuelID"
-        android:layout_width="153dp"
-        android:layout_height="48dp"
-        android:background="#4D1E48DF"
-        android:ems="10"
-        android:hint="  XXXXXX"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
-
-    <EditText
         android:id="@+id/editTxtLocation"
-        android:layout_width="153dp"
+        android:layout_width="323dp"
         android:layout_height="48dp"
         android:background="#4D1E48DF"
         android:ems="10"
@@ -276,7 +247,6 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.884" />

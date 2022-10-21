@@ -6,9 +6,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,31 +16,25 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.fuelq.EndPoints.EndPointURL;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.UnsupportedEncodingException;
 
 public class OwnerRegistration extends AppCompatActivity {
 
-    private EditText ownerName, ownerEmail, ownerPassword, ownerContact, ownerFuelStation, ownerStationID, ownerLocation;
+    private EditText ownerName, ownerEmail, ownerPassword, ownerContact, ownerFuelStation, ownerLocation;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.owner_registration);
-
-
         ownerName = findViewById(R.id.editTextTextPersonName);
         ownerEmail = findViewById(R.id.editTxtEmailAddress);
         ownerPassword = findViewById(R.id.editTxt_password);
         ownerContact = findViewById(R.id.editTxtVehNumber);
         ownerFuelStation = findViewById(R.id.editTxtStationName);
-        ownerStationID = findViewById(R.id.editTxtFuelID);
         ownerLocation = findViewById(R.id.editTxtLocation);
-
 
         final Button BtnOwnerReg = findViewById(R.id.btn_reg);
         BtnOwnerReg.setOnClickListener(view -> {
@@ -50,12 +42,12 @@ public class OwnerRegistration extends AppCompatActivity {
             OwnerRegistration.this.startActivity(activityIntent);
 
             // calling a method to post the data and passing our name and job.
-            postDataUsingVolley(ownerName.getText().toString(), ownerEmail.getText().toString(), ownerPassword.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerStationID.getText().toString(), ownerLocation.getText().toString());
+            postDataUsingVolley(ownerName.getText().toString(), ownerEmail.getText().toString(), ownerPassword.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation.getText().toString());
             Toast.makeText(OwnerRegistration.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
         });
     }
 
-    private boolean postDataUsingVolley(String ownerName, String ownerEmail, String ownerPassword, String ownerContact, String ownerFuelStation, String ownerStationID, String ownerLocation){
+    private boolean postDataUsingVolley(String ownerName, String ownerEmail, String ownerPassword, String ownerContact, String ownerFuelStation, String ownerLocation){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
@@ -68,7 +60,6 @@ public class OwnerRegistration extends AppCompatActivity {
             jsonObject.put("ownerPassword", ownerPassword);
             jsonObject.put("ownerContact", ownerContact);
             jsonObject.put("ownerFuelStation", ownerFuelStation);
-            jsonObject.put("ownerStationID", ownerStationID);
             jsonObject.put("ownerLocation", ownerLocation);
             final String mRequestBody = jsonObject.toString();
 
