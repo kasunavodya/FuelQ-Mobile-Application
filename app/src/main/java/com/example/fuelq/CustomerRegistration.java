@@ -99,7 +99,7 @@ public class CustomerRegistration extends AppCompatActivity {
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-            String URL = EndPointURL.CUSTOMER;
+            String URL = EndPointURL.GET_ALL_CUSTOMER;
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id", null);

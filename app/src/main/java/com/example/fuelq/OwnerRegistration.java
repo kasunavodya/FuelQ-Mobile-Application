@@ -51,7 +51,7 @@ public class OwnerRegistration extends AppCompatActivity {
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-            String URL = EndPointURL.OWNER;
+            String URL = EndPointURL.GET_ALL_OWNER;
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id", null);

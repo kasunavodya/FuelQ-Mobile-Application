@@ -20,7 +20,8 @@ import org.json.JSONObject;
 
 public class ViewOwnerFuelDetails extends AppCompatActivity {
 
-    String OwnerAPI = EndPointURL.OWNER_BY_ID;
+    String OwnerAPI = EndPointURL.GET_OWNER_BY_ID;
+
     TextView FuelStation, FuelLocation, OwnerName, OwnerContact;
 
     @Override
@@ -89,4 +90,5 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
         });
         queue.add(stringRequest);
     }
+
 }

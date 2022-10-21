@@ -78,7 +78,7 @@ public class AddFuelDetails extends AppCompatActivity {
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-            String URL = EndPointURL.FUEL;
+            String URL = EndPointURL.GET_ALL_FUEL;
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id", null);
