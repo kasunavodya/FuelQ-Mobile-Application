@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.NetworkResponse;
@@ -26,37 +27,50 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.List;
 
-public class CustomerRegistration extends AppCompatActivity {
+public class CustomerRegistration extends AppCompatActivity{
 
-    private EditText customerEmail, customerPassword, customerVehicleNumber;
-    private String customerVehicleType, customerFuelType;
+    Button signUp;
+    EditText email, pass, repass, vehicleNo;
+    CustomerDBHelper customerDBHelper;
+    UserDBHelper userDBHelper;
+    String valueForType, valueForFuel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_registration);
 
-        final List<String> fuelType = Arrays.asList("Octane 92", "Octane 95", "Super Diesel", "Auto Diesel", "Kerosene");
-        final List<String> vehicleType = Arrays.asList("Car", "Van", "Bus", "Motor Bike", "Three wheeler");
+        //initialize the fields and buttons
+        email = (EditText) findViewById(R.id.editTxtEmailAddress);
+        pass = (EditText) findViewById(R.id.editTxt_password);
+        repass = (EditText) findViewById(R.id.editTxt_password2);
+        vehicleNo = (EditText) findViewById(R.id.editTxtVehNumber);
+
+        final List<String> vehicleType = Arrays.asList("Bike", "Car", "Van", "Bus", "Three-Wheel", "Lorry");
+        final List<String> fuelType = Arrays.asList("Auto Diesel", "Super Diesel", "Octane 95", "Octane 92");
 
         final Spinner spinnerVehicleType = findViewById(R.id.spinnerVehType);
         final Spinner spinnerFuelType = findViewById(R.id.spinnerFuelType);
 
-        customerEmail = findViewById(R.id.editTxtEmailAddress);
-        customerPassword = findViewById(R.id.editTxt_password);
-        customerVehicleNumber = findViewById(R.id.editTxtVehNumber);
+        signUp = (Button) findViewById(R.id.btn_reg1);
 
-        ArrayAdapter adapterFuelType = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, fuelType);
-        adapterFuelType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Initialize DBHelpers
+        customerDBHelper = new CustomerDBHelper(this);
+        userDBHelper = new UserDBHelper(this);
 
-        spinnerFuelType.setAdapter(adapterFuelType);
+        ArrayAdapter vehAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, vehicleType);
+        vehAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerVehicleType.setAdapter(vehAdapter);
 
+        ArrayAdapter fuelAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, fuelType);
+        fuelAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerFuelType.setAdapter(fuelAdapter);
         spinnerFuelType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                customerFuelType = spinnerFuelType.getSelectedItem().toString();
-                //Toast.makeText(getApplicationContext(), "You selected: " + customerFuelType, Toast.LENGTH_LONG).show();
+                valueForType = spinnerVehicleType.getSelectedItem().toString();
+                valueForFuel = spinnerFuelType.getSelectedItem().toString();
             }
 
             @Override
@@ -65,33 +79,54 @@ public class CustomerRegistration extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter adapterVehicleType = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, vehicleType);
-        adapterVehicleType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinnerVehicleType.setAdapter(adapterVehicleType);
-
-        spinnerVehicleType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
+        //Create Customer Account
+        signUp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                customerVehicleType = spinnerVehicleType.getSelectedItem().toString();
-                //Toast.makeText(getApplicationContext(), "You selected: " + customerVehicleType, Toast.LENGTH_LONG).show();
-            }
+            public void onClick(View v) {
+                //Fetch all data
+                String emailAdd = email.getText().toString();
+                String password = pass.getText().toString();
+                String repassword = repass.getText().toString();
+                String vehNo = vehicleNo.getText().toString();
+                String vehType = valueForType;
+                String fuel = valueForFuel;
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+                if (emailAdd.equals("") || password.equals("") || repassword.equals("")) {
+                    Toast.makeText(CustomerRegistration.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (password.equals(repassword)) {
+                        Boolean checkCustomer = customerDBHelper.checkUserExist(emailAdd);
+                        if (checkCustomer == false) {
+                            Boolean insertCust = customerDBHelper.insertData(emailAdd, vehNo, vehType, fuel);
+                            postDataUsingVolley(emailAdd, password, vehNo,  vehType, fuel);
+                            Boolean insertUser = userDBHelper.insertData(emailAdd, password, "CUSTOMER");
 
+                            if (insertCust == true && insertUser == true) {
+                                Toast.makeText(CustomerRegistration.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                                final TextView btnReg = findViewById(R.id.btn_reg1);
+                                btnReg.setOnClickListener(view -> {
+
+                                    Intent activityIntent = new Intent(CustomerRegistration.this, CustomerHome.class);
+                                    CustomerRegistration.this.startActivity(activityIntent);
+                                });
+                            } else {
+                                Toast.makeText(CustomerRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(CustomerRegistration.this, "User already exist! please sign in", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(CustomerRegistration.this, "Passwords not matching", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
 
-        final Button BtnCustomerReg = findViewById(R.id.btn_reg1);
-        BtnCustomerReg.setOnClickListener(view -> {
-            Intent activityIntent = new Intent(CustomerRegistration.this, CustomerHome.class);
+        final TextView linkLogin = findViewById(R.id.txt_loginLink);
+        linkLogin.setOnClickListener(view -> {
+
+            Intent activityIntent = new Intent(CustomerRegistration.this, CustomerLogin.class);
             CustomerRegistration.this.startActivity(activityIntent);
-
-            // calling a method to post the data and passing our name and job.
-            postDataUsingVolley(customerEmail.getText().toString(), customerPassword.getText().toString(), customerVehicleNumber.getText().toString(), customerVehicleType, customerFuelType);
-            Toast.makeText(CustomerRegistration.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
         });
     }
 
@@ -149,4 +184,5 @@ public class CustomerRegistration extends AppCompatActivity {
         }
         return false;
     }
+
 }

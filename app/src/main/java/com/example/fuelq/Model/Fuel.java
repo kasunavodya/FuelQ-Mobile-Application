@@ -1,6 +1,7 @@
 package com.example.fuelq.Model;
 
 public class Fuel {
+    String id;
     String fuelType;
     String fuelStation;
     String arrivingDate;
@@ -8,13 +9,22 @@ public class Fuel {
     String arrivedLitres;
     String remainLitres;
 
-    public Fuel(String fuelType, String fuelStation, String arrivingDate, String arrivingTime, String arrivedLitres, String remainLitres) {
+    public Fuel(String id, String fuelType, String fuelStation, String arrivingDate, String arrivingTime, String arrivedLitres, String remainLitres) {
+        this.id = id;
         this.fuelType = fuelType;
         this.fuelStation = fuelStation;
         this.arrivingDate = arrivingDate;
         this.arrivingTime = arrivingTime;
         this.arrivedLitres = arrivedLitres;
         this.remainLitres = remainLitres;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFuelType() {

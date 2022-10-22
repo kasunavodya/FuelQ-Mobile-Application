@@ -35,47 +35,6 @@
         app:srcCompat="@drawable/shed"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/img_list"
-        android:layout_width="359dp"
-        android:layout_height="230dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189"
-        app:srcCompat="@drawable/list"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_edit"
-        android:layout_width="49dp"
-        android:layout_height="29dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227"
-        app:srcCompat="@drawable/edit"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_delete"
-        android:layout_width="49dp"
-        android:layout_height="29dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227"
-        app:srcCompat="@drawable/trash"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/txt_fuelStation"
         android:layout_width="wrap_content"
@@ -90,81 +49,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.036" />
-
-    <TextView
-        android:id="@+id/txt_fuel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/octane"
-        android:textColor="#FB0303"
-        android:textSize="22sp"
-        app:fontFamily="serif"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227" />
-
-    <TextView
-        android:id="@+id/txt_vehicleType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/arriving_litres"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
-
-    <TextView
-        android:id="@+id/txt_litres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/litres1"
-        android:textColor="#12E30D"
-        android:textSize="16sp"
-        app:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
-
-    <TextView
-        android:id="@+id/txt_arriving4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/litres2"
-        android:textColor="#12E30D"
-        android:textSize="16sp"
-        app:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
-
-    <TextView
-        android:id="@+id/txt_remaining"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/remaining_litres"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
 
     <TextView
         android:id="@+id/txt_fuelLocation"
@@ -224,5 +108,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.955"
         app:srcCompat="@drawable/add_button" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvMain"
+        android:layout_width="362dp"
+        android:layout_height="455dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
