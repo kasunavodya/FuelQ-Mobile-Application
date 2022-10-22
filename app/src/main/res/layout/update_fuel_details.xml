@@ -85,7 +85,7 @@
         android:layout_height="49dp"
         android:background="#4D1E48DF"
         android:ems="10"
-        android:inputType="date"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"

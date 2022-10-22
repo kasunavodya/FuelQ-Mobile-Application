@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.NetworkResponse;
@@ -30,7 +31,6 @@ public class OwnerRegistration extends AppCompatActivity {
 
     private EditText ownerName, ownerEmail, ownerPassword, ownerContact, ownerFuelStation;
     private String ownerLocation;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +74,20 @@ public class OwnerRegistration extends AppCompatActivity {
             postDataUsingVolley(ownerName.getText().toString(), ownerEmail.getText().toString(), ownerPassword.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation);
             Toast.makeText(OwnerRegistration.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
         });
+
+        final TextView linkLogin = findViewById(R.id.txt_loginLink);
+        linkLogin.setOnClickListener(view -> {
+
+            Intent activityIntent = new Intent(OwnerRegistration.this, CustomerLogin.class);
+            OwnerRegistration.this.startActivity(activityIntent);
+        });
     }
 
     private boolean postDataUsingVolley(String ownerName, String ownerEmail, String ownerPassword, String ownerContact, String ownerFuelStation, String ownerLocation){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-            String URL = EndPointURL.OWNER;
+            String URL = EndPointURL.GET_ALL_OWNER;
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id", null);

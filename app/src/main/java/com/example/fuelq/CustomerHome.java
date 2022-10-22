@@ -15,7 +15,7 @@ import com.example.fuelq.EndPoints.EndPointURL;
 
 public class CustomerHome extends AppCompatActivity {
 
-    String api = EndPointURL.CUSTOMER;
+    String api = EndPointURL.GET_ALL_CUSTOMER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

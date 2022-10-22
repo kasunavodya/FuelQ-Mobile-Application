@@ -6,7 +6,7 @@
     <string name="password">Password</string>
     <string name="fp_link">Forgot Password</string>
     <string name="login_btn">Login</string>
-    <string name="signIn_link">Sign In</string>
+    <string name="signIn_link"><u>Create Account</u></string>
     <string name="req_text">*</string>
     <string name="customer_reg_btn">Customer Registration</string>
     <string name="shedOwner_reg_btn">Shed Owner Registration</string>
@@ -63,4 +63,8 @@
     <string name="delete_msg2">delete this item?</string>
     <string name="test">Testing</string>
     <string name="float_btn">Add</string>
+    <string name="edit_btn">EDIT</string>
+    <string name="delete_btn">DELETE</string>
+    <string name="login_link">Already have an account</string>
+    <string name="login_link2"><u>Login Here</u></string>
 </resources>
