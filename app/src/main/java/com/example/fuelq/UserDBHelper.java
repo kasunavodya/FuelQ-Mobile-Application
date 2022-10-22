@@ -11,7 +11,9 @@ import androidx.annotation.Nullable;
 public class UserDBHelper extends SQLiteOpenHelper {
 
     public UserDBHelper(Context context) {
-        super(context, "Users.db", null, 1);
+
+        super(context, "User.db", null, 1);
+
     }
 
     @Override

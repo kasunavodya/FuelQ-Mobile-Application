@@ -122,33 +122,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_fpassword"
+        android:id="@+id/txt_RegLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoLink="all"
         android:gravity="center_horizontal"
-        android:text="@string/fp_link"
-        android:textColor="#1E48DF"
-        android:textSize="13sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.844"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
-
-    <TextView
-        android:id="@+id/txt_signIn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:linksClickable="false"
+        android:selectAllOnFocus="false"
         android:text="@string/signIn_link"
         android:textColor="#1E48DF"
         android:textSize="13sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintHorizontal_bias="0.72"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.877" />
@@ -164,13 +151,13 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.877" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_edit"
         android:layout_width="326dp"
         android:layout_height="48dp"
         android:textSize="20sp"
