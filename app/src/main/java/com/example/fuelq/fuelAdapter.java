@@ -1,10 +1,13 @@
 package com.example.fuelq;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fuelq.Model.Fuel;
@@ -51,6 +54,24 @@ public class fuelAdapter extends RecyclerView.Adapter<fuelAdapter.ViewHolder> {
             FuelType = itemView.findViewById(R.id.txt_fuel);
             arrivedLitres = itemView.findViewById(R.id.txt_litres);
             remainLitres = itemView.findViewById(R.id.txt_arriving4);
+
+            itemView.findViewById(R.id.btn_edit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("EDIT button clicked", "onClick: Edit button is clicked" );
+                Intent activityIntent = new Intent(v.getContext(), UpdateFuelDetails.class);
+                v.getContext().startActivity(activityIntent);
+            }
+        });;
+
+            itemView.findViewById(R.id.btn_delete).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.e("DELETE button clicked", "onClick: Delete button is clicked" );
+                    Intent activityIntent = new Intent(v.getContext(), DeleteConfirmation.class);
+                    v.getContext().startActivity(activityIntent);
+                }
+            });;
 
         }
     }

@@ -51,6 +51,7 @@ public class CustomerLogin extends AppCompatActivity {
                         if(type.equals("OWNER")){
 
                             Intent intent = new Intent(getApplicationContext(), ShedOwnerHome.class);
+                            intent.putExtra("Email", email.getText().toString());
                             startActivity(intent);
                         } else{
                             Intent intent = new Intent(getApplicationContext(), CustomerHome.class);
