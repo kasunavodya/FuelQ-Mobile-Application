@@ -14,9 +14,8 @@ public class GetFuelDetails extends AppCompatActivity {
 
         final Button btnEdit = findViewById(R.id.btn_edit);
         btnEdit.setOnClickListener(view -> {
-            Intent activityIntent = new Intent(GetFuelDetails.this, GetFuelDetails.class);
+            Intent activityIntent = new Intent(GetFuelDetails.this, UpdateFuelDetails.class);
             GetFuelDetails.this.startActivity(activityIntent);
-
         });
 
         Button btnDelete = findViewById(R.id.btn_delete);

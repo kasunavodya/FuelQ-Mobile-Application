@@ -36,7 +36,7 @@ public class AddFuelDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_fuel_details);
 
-        final List<String> ownerfuelType = Arrays.asList("Octane 92", "Octane 95", "Super Diesel", "Auto Diesel", "Kerosene");
+        final List<String> ownerfuelType = Arrays.asList("Octane 92", "Octane 95", "Super Diesel", "Auto Diesel");
 
         final Spinner spinnerFuelType = findViewById(R.id.spinner_fuelType);
 
