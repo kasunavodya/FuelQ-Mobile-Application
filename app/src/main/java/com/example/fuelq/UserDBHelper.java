@@ -57,14 +57,14 @@ public class UserDBHelper extends SQLiteOpenHelper {
             return false;
     }
 
-    public String getUserType(String email, String password) {
+    public Cursor getUserType(String email, String password) {
         String type = "";
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select type from users where email = ? and password = ?", new String[]{email, password});
+        Cursor cursor = db.rawQuery("Select type from users where email = ? and  password = ?", new String[]{email, password});
 
-        if(cursor.moveToFirst()){
-            type = cursor.toString();
-        }
-        return type;
+//        if(cursor.moveToFirst()){
+//            type = cursor.getString(0);
+//        }
+        return cursor;
     }
 }
