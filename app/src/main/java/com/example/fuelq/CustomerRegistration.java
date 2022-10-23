@@ -65,14 +65,23 @@ public class CustomerRegistration extends AppCompatActivity{
         ArrayAdapter fuelAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, fuelType);
         fuelAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerFuelType.setAdapter(fuelAdapter);
-        spinnerFuelType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
+        spinnerFuelType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                valueForFuel = spinnerFuelType.getSelectedItem().toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        spinnerVehicleType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 valueForType = spinnerVehicleType.getSelectedItem().toString();
-                valueForFuel = spinnerFuelType.getSelectedItem().toString();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -106,7 +115,7 @@ public class CustomerRegistration extends AppCompatActivity{
                                 final TextView btnReg = findViewById(R.id.btn_reg1);
                                 btnReg.setOnClickListener(view -> {
 
-                                    Intent activityIntent = new Intent(CustomerRegistration.this, CustomerHome.class);
+                                    Intent activityIntent = new Intent(CustomerRegistration.this, CustomerLogin.class);
                                     CustomerRegistration.this.startActivity(activityIntent);
                                 });
                             } else {

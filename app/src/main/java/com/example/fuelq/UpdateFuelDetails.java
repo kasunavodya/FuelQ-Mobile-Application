@@ -35,7 +35,7 @@ public class UpdateFuelDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_fuel_details);
 
-        final List<String> ownerfuelType = Arrays.asList("Octane 92", "Octane 95", "Super Diesel", "Auto Diesel", "Kerosene");
+        final List<String> ownerfuelType = Arrays.asList("Octane 92", "Octane 95", "Super Diesel", "Auto Diesel");
 
         final Spinner spinnerFuelType = findViewById(R.id.spinner_fuelType);
 
@@ -43,7 +43,7 @@ public class UpdateFuelDetails extends AppCompatActivity {
         arrivingTime = findViewById(R.id.editTxt_time);
         arrivedLitres = findViewById(R.id.editTxt_arriving);
 
-        String fuelId = "63526fcce77068ba135982e0";
+        String fuelId = "635305be7c202dfe2c5acf8c";
         updateQueueDetails(fuelId);
 
         ArrayAdapter adapterFuelType = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, ownerfuelType);
