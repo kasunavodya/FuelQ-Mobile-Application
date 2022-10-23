@@ -2,7 +2,9 @@ package com.example.fuelq;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,10 +40,16 @@ public class CustomerLogin extends AppCompatActivity {
                 }
                 else{
                     Boolean checkUserPass = userDBHelper.checkUserEmailPassword(userEmail, userPassword);
-                    String userType = userDBHelper.getUserType(userEmail, userPassword);
+                    Cursor userType = userDBHelper.getUserType(userEmail, userPassword);
+                    String type = "";
+                    if(userType.moveToFirst()){
+                        type = userType.getString(0);
+                    }
                     if(checkUserPass == true){
                         Toast.makeText(CustomerLogin.this, "Sign in successful", Toast.LENGTH_SHORT).show();
-                        if(userType == "OWNER"){
+                        Log.i("USERTYPE", type);
+                        if(type.equals("OWNER")){
+
                             Intent intent = new Intent(getApplicationContext(), ShedOwnerHome.class);
                             startActivity(intent);
                         } else{
