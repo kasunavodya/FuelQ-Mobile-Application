@@ -35,10 +35,15 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
     ArrayList<Fuel> allFuelList;
     RecyclerView rcvMain;
 
+    private String userEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_owner_fuel_details);
+
+        Intent intent = getIntent();
+        userEmail = intent.getStringExtra("Email");
 
         FuelStation = findViewById(R.id.txt_fuelStation);
         FuelLocation = findViewById(R.id.txt_fuelLocation);
