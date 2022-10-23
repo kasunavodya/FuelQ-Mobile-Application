@@ -29,33 +29,41 @@ import java.util.List;
 
 public class OwnerRegistration extends AppCompatActivity {
 
-    private EditText ownerName, ownerEmail, ownerPassword, ownerContact, ownerFuelStation;
-    private String ownerLocation;
+    EditText ownerName, ownerEmail, ownerPassword, ownerRePassword, ownerContact, ownerFuelStation;
+    String ownerLocation;
+    ShedOwnerDBHelper shedOwnerDBHelper;
+    UserDBHelper userDBHelper;
+    Button signUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.owner_registration);
 
+        ownerName = (EditText) findViewById(R.id.editTextTextPersonName);
+        ownerEmail = (EditText) findViewById(R.id.editTxtEmailAddress);
+        ownerPassword = (EditText) findViewById(R.id.editTxt_password);
+        ownerRePassword = (EditText) findViewById(R.id.editTxt_password2);
+        ownerContact = (EditText) findViewById(R.id.editTxtVehNumber);
+        ownerFuelStation = (EditText) findViewById(R.id.editTxtStationName);
+
         final List<String> locationType = Arrays.asList("Colombo", "Dehiwala", "Mount Lavinia", "Moratuwa", "Sri Jayawardenepura Kotte", "Negombo", "Kandy", "Kalmunai", "Vavuniya", "Galle", "Trincomalee", "Batticaloa", "Jaffna", "Matale", "Katunayake", "Dambulla", "Kolonnawa", "Anuradhapura", "Ratnapura");
+        final Spinner spinnerLocationType = findViewById(R.id.spinnerLocation);
 
-        final Spinner spinnerLocation = findViewById(R.id.spinnerLocation);
-        ownerName = findViewById(R.id.editTextTextPersonName);
-        ownerEmail = findViewById(R.id.editTxtEmailAddress);
-        ownerPassword = findViewById(R.id.editTxt_password);
-        ownerContact = findViewById(R.id.editTxtVehNumber);
-        ownerFuelStation = findViewById(R.id.editTxtStationName);
+        signUp = (Button) findViewById(R.id.btn_reg);
 
-        ArrayAdapter adapterLocation = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, locationType);
+        //Initialize DBHelpers
+        shedOwnerDBHelper = new ShedOwnerDBHelper(this);
+        userDBHelper = new UserDBHelper(this);
+
+        ArrayAdapter adapterLocation = new ArrayAdapter(this, android.R.layout.simple_spinner_item, locationType);
         adapterLocation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerLocationType.setAdapter(adapterLocation);
 
-        spinnerLocation.setAdapter(adapterLocation);
-
-        spinnerLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
+        spinnerLocationType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ownerLocation = spinnerLocation.getSelectedItem().toString();
+                ownerLocation = spinnerLocationType.getSelectedItem().toString();
                 //Toast.makeText(getApplicationContext(), "You selected: " + customerFuelType, Toast.LENGTH_LONG).show();
             }
 
@@ -65,19 +73,36 @@ public class OwnerRegistration extends AppCompatActivity {
             }
         });
 
-        final Button BtnOwnerReg = findViewById(R.id.btn_reg);
-        BtnOwnerReg.setOnClickListener(view -> {
-            Intent activityIntent = new Intent(OwnerRegistration.this, ShedOwnerHome.class);
-            OwnerRegistration.this.startActivity(activityIntent);
-
-            // calling a method to post the data and passing our name and job.
-            postDataUsingVolley(ownerName.getText().toString(), ownerEmail.getText().toString(), ownerPassword.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation);
-            Toast.makeText(OwnerRegistration.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
+        signUp.setOnClickListener(view -> {
+            if(ownerName.getText().toString().equals("") || ownerEmail.getText().toString().equals("") || ownerPassword.getText().toString().equals("") || ownerContact.getText().toString().equals("") || ownerFuelStation.getText().toString().equals("") || ownerRePassword.getText().toString().equals("") || ownerLocation.equals(""))
+            {
+                Toast.makeText(this, "Please Enter all the Fields", Toast.LENGTH_SHORT).show();
+            } else {
+                if (ownerPassword.getText().toString().equals(ownerRePassword.getText().toString())) {
+                    Boolean checkOwner = userDBHelper.checkUserExist(ownerEmail.getText().toString());
+                    if (checkOwner == false) {
+                        Boolean insertOwner = shedOwnerDBHelper.insertData(ownerEmail.getText().toString(), ownerName.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation);
+                        Boolean insertUser = userDBHelper.insertData(ownerEmail.getText().toString(), ownerPassword.getText().toString(), "OWNER");
+                        // calling a method to post the data and passing our name and job.
+                        postDataUsingVolley(ownerName.getText().toString(), ownerEmail.getText().toString(), ownerPassword.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation);
+                        if (insertOwner == true && insertUser == true) {
+                            Toast.makeText(this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                            Intent ownerIntent = new Intent(OwnerRegistration.this, CustomerLogin.class);
+                            OwnerRegistration.this.startActivity(ownerIntent);
+                        } else {
+                            Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(this, "User already exist! please sign in", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, "Password not matching", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
 
         final TextView linkLogin = findViewById(R.id.txt_loginLink);
         linkLogin.setOnClickListener(view -> {
-
             Intent activityIntent = new Intent(OwnerRegistration.this, CustomerLogin.class);
             OwnerRegistration.this.startActivity(activityIntent);
         });
