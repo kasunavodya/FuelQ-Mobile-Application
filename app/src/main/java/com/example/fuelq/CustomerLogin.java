@@ -45,7 +45,7 @@ public class CustomerLogin extends AppCompatActivity {
                             Intent intent = new Intent(getApplicationContext(), ShedOwnerHome.class);
                             startActivity(intent);
                         } else{
-                            Intent intent = new Intent(getApplicationContext(), CustomerHome.class);
+                            Intent intent = new Intent(getApplicationContext(), ShedOwnerHome.class);
                             startActivity(intent);
                         }
                     }else{
