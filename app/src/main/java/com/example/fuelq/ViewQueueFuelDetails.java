@@ -68,6 +68,10 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
 //        location.setText(stationLocation);
 
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         final Button btnJoin = findViewById(R.id.btn_join);
         btnJoin.setOnClickListener(view -> {
             Intent activityIntent = new Intent(ViewQueueFuelDetails.this, ReqFuelVolume.class);

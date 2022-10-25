@@ -36,7 +36,11 @@ public class AddFuelDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_fuel_details);
 
-        final List<String> ownerfuelType = Arrays.asList("Octane 92", "Octane 95", "Super Diesel", "Auto Diesel");
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
+        final List<String> ownerfuelType = Arrays.asList("Petrol", "Diesel");
 
         final Spinner spinnerFuelType = findViewById(R.id.spinner_fuelType);
 
@@ -63,15 +67,19 @@ public class AddFuelDetails extends AppCompatActivity {
             }
         });
 
-        final Button btnAddDetails = findViewById(R.id.btn_addDetails);
-        btnAddDetails.setOnClickListener(view -> {
-            Intent activityIntent = new Intent(AddFuelDetails.this, ViewOwnerFuelDetails.class);
-            AddFuelDetails.this.startActivity(activityIntent);
+        if(arrivingDate.equals("") || arrivingTime.equals("") || arrivedLitres.equals("")) {
+            Toast.makeText(AddFuelDetails.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+        }else{
+            final Button btnAddDetails = findViewById(R.id.btn_addDetails);
+            btnAddDetails.setOnClickListener(view -> {
+                Intent activityIntent = new Intent(AddFuelDetails.this, ViewOwnerFuelDetails.class);
+                AddFuelDetails.this.startActivity(activityIntent);
 
-            // calling a method to post the data and passing our name and job.
-            postDataUsingVolley(arrivingDate.getText().toString(), arrivingTime.getText().toString(), arrivedLitres.getText().toString(), fuelType);
-            Toast.makeText(AddFuelDetails.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
-        });
+                // calling a method to post the data and passing our name and job.
+                postDataUsingVolley(arrivingDate.getText().toString(), arrivingTime.getText().toString(), arrivedLitres.getText().toString(), fuelType);
+                Toast.makeText(AddFuelDetails.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
+            });
+        }
     }
 
     private boolean postDataUsingVolley(String arrivingDate, String arrivingTime, String arrivedLitres, String fuelType) {

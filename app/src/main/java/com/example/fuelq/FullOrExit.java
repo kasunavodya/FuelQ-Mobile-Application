@@ -2,10 +2,7 @@ package com.example.fuelq;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.view.View;
 import android.widget.Button;
-import android.widget.Chronometer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +12,10 @@ public class FullOrExit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.full_or_exit);
+
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
 
         final Button btnFull = findViewById(R.id.btn_full);
         btnFull.setOnClickListener(view -> {

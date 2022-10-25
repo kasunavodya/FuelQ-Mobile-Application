@@ -40,6 +40,10 @@ public class CustomerRegistration extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_registration);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         //initialize the fields and buttons
         email = (EditText) findViewById(R.id.editTxtEmailAddress);
         pass = (EditText) findViewById(R.id.editTxt_password);
@@ -114,7 +118,6 @@ public class CustomerRegistration extends AppCompatActivity{
                                 Toast.makeText(CustomerRegistration.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                                 final TextView btnReg = findViewById(R.id.btn_reg1);
                                 btnReg.setOnClickListener(view -> {
-
                                     Intent activityIntent = new Intent(CustomerRegistration.this, CustomerLogin.class);
                                     CustomerRegistration.this.startActivity(activityIntent);
                                 });

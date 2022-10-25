@@ -45,8 +45,14 @@ public class CustomerHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_home);
+
         customerDBHelper = new CustomerDBHelper(this);
         fuelStationSpinner = findViewById(R.id.spinner_station);
+
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         final Button btnCheck = findViewById(R.id.btn_check);
 
         //Get Customer email Address

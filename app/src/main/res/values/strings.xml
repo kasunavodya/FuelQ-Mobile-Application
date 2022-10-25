@@ -32,6 +32,11 @@
     <string name="updateDetails">Update Details</string>
     <string name="addDetails">Add Details</string>
     <string name="van">VAN</string>
+    <string name="bike">BIKE</string>
+    <string name="car">CAR</string>
+    <string name="bus">BUS</string>
+    <string name="three_wheel">THREE WHEEL</string>
+    <string name="lorry">LORRY</string>
     <string name="tot">Total:</string>
     <string name="ten">10</string>
     <string name="contact">Contact Number</string>

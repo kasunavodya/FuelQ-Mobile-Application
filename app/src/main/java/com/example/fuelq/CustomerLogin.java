@@ -22,6 +22,10 @@ public class CustomerLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_login);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         email = findViewById(R.id.editTxtEmailAddress);
         password = findViewById(R.id.editTxt_password);
         loginBtn = findViewById(R.id.btn_login);
@@ -51,6 +55,7 @@ public class CustomerLogin extends AppCompatActivity {
                         if(type.equals("OWNER")){
 
                             Intent intent = new Intent(getApplicationContext(), ShedOwnerHome.class);
+                            intent.putExtra("Email", email.getText().toString());
                             startActivity(intent);
                         } else{
                             Intent intent = new Intent(getApplicationContext(), CustomerHome.class);

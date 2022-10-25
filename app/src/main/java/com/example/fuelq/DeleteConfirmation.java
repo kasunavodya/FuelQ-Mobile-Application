@@ -3,6 +3,7 @@ package com.example.fuelq;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,11 +20,15 @@ public class DeleteConfirmation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirm_delete);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         final Button BtnDelete = findViewById(R.id.btn_delete);
         BtnDelete.setOnClickListener(view -> {
-
             Intent activityIntent = new Intent(DeleteConfirmation.this, ViewOwnerFuelDetails.class);
             DeleteConfirmation.this.startActivity(activityIntent);
+            Toast.makeText(DeleteConfirmation.this, "Data Deleted Successfully", Toast.LENGTH_LONG).show();
             exitFuelApi();
         });
 

@@ -99,6 +99,10 @@ public class AddFeedback extends AppCompatActivity {
                     JSONObject singleObject = new JSONObject(response);
                 } catch (JSONException e) {
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
                 }
             }, error -> Log.e("LOG_VOLLEY", error.toString())) {
                 @Override
