@@ -22,6 +22,10 @@ public class CustomerLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_login);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         email = findViewById(R.id.editTxtEmailAddress);
         password = findViewById(R.id.editTxt_password);
         loginBtn = findViewById(R.id.btn_login);

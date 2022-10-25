@@ -32,7 +32,7 @@ public class fuelAdapter extends RecyclerView.Adapter<fuelAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull fuelAdapter.ViewHolder holder, int position) {
         Fuel fuel = arrayList.get(position);
-        holder.FuelType.setText(fuel.getFuelType());
+        holder.FuelType.setText(fuel.getFuelType() + " - (" + fuel.getArrivingDate() +")");
         holder.arrivedLitres.setText(fuel.getArrivedLitres() + " Litres");
         holder.remainLitres.setText(fuel.getRemainLitres() + " Litres");
     }
@@ -45,13 +45,15 @@ public class fuelAdapter extends RecyclerView.Adapter<fuelAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         // creating variables for our views.
-        private TextView FuelType, arrivedLitres, remainLitres;
+        private TextView FuelType, arrivedLitres, remainLitres, arrivingDate, arrivingTime;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             // initializing our views with their ids.
             FuelType = itemView.findViewById(R.id.txt_fuel);
+            arrivingDate = itemView.findViewById(R.id.txt_fuel);
+            arrivingTime = itemView.findViewById(R.id.txt_fuel);
             arrivedLitres = itemView.findViewById(R.id.txt_litres);
             remainLitres = itemView.findViewById(R.id.txt_arriving4);
 

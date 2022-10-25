@@ -20,6 +20,10 @@ public class DeleteConfirmation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirm_delete);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         final Button BtnDelete = findViewById(R.id.btn_delete);
         BtnDelete.setOnClickListener(view -> {
             Intent activityIntent = new Intent(DeleteConfirmation.this, ViewOwnerFuelDetails.class);

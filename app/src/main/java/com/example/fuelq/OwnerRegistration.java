@@ -40,6 +40,10 @@ public class OwnerRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.owner_registration);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         ownerName = (EditText) findViewById(R.id.editTextTextPersonName);
         ownerEmail = (EditText) findViewById(R.id.editTxtEmailAddress);
         ownerPassword = (EditText) findViewById(R.id.editTxt_password);

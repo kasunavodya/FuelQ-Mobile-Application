@@ -13,6 +13,10 @@ public class FullOrExit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.full_or_exit);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         final Button btnFull = findViewById(R.id.btn_full);
         btnFull.setOnClickListener(view -> {
 
