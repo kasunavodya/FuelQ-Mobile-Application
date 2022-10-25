@@ -8,25 +8,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_rate"
-        android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:background="@drawable/rounded_corners"
-        android:text="@string/rate_btn"
-        android:textSize="20sp"
-        app:backgroundTint="#1E48DF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
-
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="383dp"
-        android:layout_height="351dp"
+        android:layout_width="359dp"
+        android:layout_height="253dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,8 +36,8 @@
 
     <TextView
         android:id="@+id/txt_feedback"
-        android:layout_width="276dp"
-        android:layout_height="75dp"
+        android:layout_width="317dp"
+        android:layout_height="49dp"
         android:padding="4dp"
         android:text="@string/feedback1"
         android:textColor="#ffffff"
@@ -61,15 +46,15 @@
         app:fontFamily="serif-monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        app:layout_constraintVertical_bias="0.367" />
 
     <TextView
         android:id="@+id/txt_feedback2"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
+        android:layout_width="281dp"
+        android:layout_height="51dp"
         android:padding="4dp"
         android:text="@string/feedback2"
         android:textColor="#ffffff"
@@ -78,22 +63,99 @@
         app:fontFamily="serif-monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintHorizontal_bias="0.961"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintVertical_bias="0.433" />
 
-    <RatingBar
-        android:id="@+id/ratingBar_feedback"
-        android:layout_width="244dp"
-        android:layout_height="56dp"
-        android:background="#3A3C42"
+    <EditText
+        android:id="@+id/editText_userFeedback"
+        android:layout_width="335dp"
+        android:layout_height="65dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Enter your feedback"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.728" />
+
+    <Button
+        android:id="@+id/btn_rate"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_corners"
+        android:text="@string/rate_btn"
+        android:textSize="20sp"
+        app:backgroundTint="#1E48DF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.863" />
+
+    <RatingBar
+        android:id="@+id/ratingBar_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FB8C00"
+        android:numStars="5"
+        android:progressBackgroundTint="#E8E9EF"
+        android:progressTint="#FB8C00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54" />
+
+    <TextView
+        android:id="@+id/txt_autoStarFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Very Dissatisfied"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/editText_userFeedback"-->
+<!--        android:layout_width="335dp"-->
+<!--        android:layout_height="65dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:ems="10"-->
+<!--        android:gravity="start|top"-->
+<!--        android:hint="Enter your feedback"-->
+<!--        android:inputType="textMultiLine"-->
+<!--        android:lines="4"-->
+<!--        android:padding="5dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.728" />-->
+
+    <!--    <RatingBar-->
+<!--        android:id="@+id/ratingBar_feedback"-->
+<!--        android:layout_width="244dp"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:background="#3A3C42"-->
+<!--        android:numStars="5"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.496"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.675"-->
+<!--        tools:ignore="SpeakableTextPresentCheck" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

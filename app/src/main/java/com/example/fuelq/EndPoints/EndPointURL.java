@@ -9,6 +9,7 @@ public class EndPointURL {
     public static final String GET_FUEL_BY_ID = "https://fuelq.herokuapp.com/api/Fuel/63558711504fcab632d271e7";
     public static final String UPDATE_FUEL_BY_ID = "https://fuelq.herokuapp.com/api/Fuel/";
     public static final String DELETE_FUEL_BY_ID = "https://fuelq.herokuapp.com/api/Fuel/63558711504fcab632d271e7";
+    public static final String GET_ALL_FEEDBACK = "https://fuelq.herokuapp.com/api/Feedback";
 
 }
 
