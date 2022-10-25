@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19144986
+ * Developer Name    :   H.M. Kasuni Navodya
+ * Function          :   View Owner Fuel Details (FuelStation, FuelLocation, OwnerName, OwnerContact)
+ * Implemented Date  :   19th October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -28,8 +35,7 @@ import java.util.ArrayList;
 
 public class ViewOwnerFuelDetails extends AppCompatActivity {
 
-    String OwnerAPI = EndPointURL.GET_OWNER_BY_ID;
-    String FuelAPI = EndPointURL.GET_ALL_FUEL;
+    //Variable List
     TextView FuelStation, FuelLocation, OwnerName, OwnerContact;
 
     private fuelAdapter adapter;
@@ -38,18 +44,25 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
 
     private String userEmail;
 
+    //EndPoint list
+    String OwnerAPI = EndPointURL.GET_OWNER_BY_ID;
+    String FuelAPI = EndPointURL.GET_ALL_FUEL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_owner_fuel_details);
 
+        //Set the titleBar icon
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
 
+        //pass the email address
         Intent intent = getIntent();
         userEmail = intent.getStringExtra("Email");
 
+        //Get all UI components to variables
         FuelStation = findViewById(R.id.txt_fuelStation);
         FuelLocation = findViewById(R.id.txt_fuelLocation);
         OwnerName = findViewById(R.id.txt_fuelOwner);
@@ -62,18 +75,26 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
         getOwnerData();
         getAllFuelData();
 
+        //Handle the floating button navigation
         final FloatingActionButton btnAdd = findViewById(R.id.floating_add);
         btnAdd.setOnClickListener(view -> {
             Intent activityIntent = new Intent(ViewOwnerFuelDetails.this, AddFuelDetails.class);
             ViewOwnerFuelDetails.this.startActivity(activityIntent);
         });
 
+        //Handle the refresh button navigation
         final Button btnRefresh = findViewById(R.id.btn_refresh);
         btnRefresh.setOnClickListener(view -> {
             Intent activityIntent = new Intent(ViewOwnerFuelDetails.this, ViewOwnerFuelDetails.class);
             ViewOwnerFuelDetails.this.startActivity(activityIntent);
         });
     }
+
+    /**********************************************************************************
+     * @DeveloperID   :   IT19144986
+     * @Developer     :   H.M. Kasuni Navodya
+     * @Function      :   Display owner details by owner ID
+     **********************************************************************************/
 
     private void getOwnerData() {
 
@@ -111,6 +132,12 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
+    /**********************************************************************************
+     * @DeveloperID   :   IT19144986
+     * @Developer     :   H.M. Kasuni Navodya
+     * @Function      :   Display All fuel details
+     **********************************************************************************/
+
     private void getAllFuelData() {
 
         RequestQueue queue = Volley.newRequestQueue(ViewOwnerFuelDetails.this);
@@ -144,6 +171,7 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
         queue.add(jsonArrayRequest);
     }
 
+    //handle recyclerView
     private void buildRecyclerView() {
 
         adapter = new fuelAdapter(allFuelList, ViewOwnerFuelDetails.this);
