@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19144986
+ * Developer Name    :   H.M. Kasuni Navodya
+ * Function          :   Update Fuel Details (arrivingDate, arrivingTime, arrivedLitres)
+ * Implemented Date  :   21st October 2022
+*/
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -23,18 +30,25 @@ import java.util.Map;
 
 public class UpdateFuelDetails extends AppCompatActivity {
 
+    //Variable List
     private EditText arrivingDate, arrivingTime, arrivedLitres, fuelType;
     Fuel FuelModel;
+
+    //EndPoint
+    String getfuelByIdAPI = EndPointURL.GET_FUEL_BY_ID;
+    String updatefuelByIdAPI = EndPointURL.UPDATE_FUEL_BY_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_fuel_details);
 
+        //Set the titleBar icon
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
 
+        //Get all UI components to variables
         arrivingDate = findViewById(R.id.editTxt_date);
         arrivingTime = findViewById(R.id.editTxt_time);
         arrivedLitres = findViewById(R.id.editTxt_arriving);
@@ -46,6 +60,7 @@ public class UpdateFuelDetails extends AppCompatActivity {
         //updateQueueDetails(fuelId);
         getFuelData();
 
+        //Handle the 'btnAddDetails' button navigation
         final Button btnAddDetails = findViewById(R.id.btn_update);
         btnAddDetails.setOnClickListener(view -> {
             updateQueueDetails(fuelId);
@@ -54,12 +69,14 @@ public class UpdateFuelDetails extends AppCompatActivity {
         });
     }
 
+    /**********************************************************************************
+     * @DeveloperID   :   IT19144986
+     * @Developer     :   H.M. Kasuni Navodya
+     * @Function      :   Get fuel details by fuel ID
+     **********************************************************************************/
     private void getFuelData() {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-
-        String getfuelByIdAPI = EndPointURL.GET_FUEL_BY_ID;
-
         StringRequest stringRequest = new StringRequest(Request.Method.GET, getfuelByIdAPI,
                 new Response.Listener<String>() {
                     @Override
@@ -94,10 +111,14 @@ public class UpdateFuelDetails extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
+    /**********************************************************************************
+     * @DeveloperID   :   IT19144986
+     * @Developer     :   H.M. Kasuni Navodya
+     * @Function      :   Update fuel details by fuel ID
+     **********************************************************************************/
     public void updateQueueDetails(String id){
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        String updatefuelByIdAPI = EndPointURL.UPDATE_FUEL_BY_ID;
         updatefuelByIdAPI = updatefuelByIdAPI + id.trim();
 
         StringRequest stringRequest = new StringRequest(Request.Method.PUT, updatefuelByIdAPI,
@@ -114,23 +135,10 @@ public class UpdateFuelDetails extends AppCompatActivity {
             }
         }) {
 
-//            @Override
-//            protected Map<String, String> getParams(){
-//                Map<String, String> params = new HashMap<String, String>();
-//                params.put("id", FuelModel.getId());
-//                params.put("fuelType", FuelModel.getFuelType());
-//                params.put("fuelStation", FuelModel.getFuelType());
-//                params.put("arrivingDate", arrivingDate.getText().toString());
-//                params.put("arrivingTime", arrivingTime.getText().toString());
-//                params.put("arrivedLitres", arrivedLitres.getText().toString());
-//                params.put("remainLitres", FuelModel.getArrivedLitres());
-//                return params;
-//            }
-
             @Override
             public byte[] getBody() {
                 String body="{\"id\":" + "\"" + FuelModel.getId() + "\"," +
-//                        "\"fuelType\":" + "\"" + FuelModel.getFuelType() + "\"," +
+                        "\"fuelType\":" + "\"" + FuelModel.getFuelType() + "\"," +
                         "\"fuelStation\":" + "\"" + FuelModel.getFuelStation() + "\"," +
                         "\"arrivingDate\":" + "\"" + arrivingDate.getText().toString() + "\"," +
                         "\"arrivingTime\":" + "\"" + arrivingTime.getText().toString() + "\"," +
@@ -151,3 +159,19 @@ public class UpdateFuelDetails extends AppCompatActivity {
         queue.add(stringRequest);
     }
 }
+
+//            First Try - Update Function -> failed
+//---------------------------------------------------------------------------
+//            @Override
+//            protected Map<String, String> getParams(){
+//                Map<String, String> params = new HashMap<String, String>();
+//                params.put("id", FuelModel.getId());
+//                params.put("fuelType", FuelModel.getFuelType());
+//                params.put("fuelStation", FuelModel.getFuelType());
+//                params.put("arrivingDate", arrivingDate.getText().toString());
+//                params.put("arrivingTime", arrivingTime.getText().toString());
+//                params.put("arrivedLitres", arrivedLitres.getText().toString());
+//                params.put("remainLitres", FuelModel.getArrivedLitres());
+//                return params;
+//            }
+//---------------------------------------------------------------------------

@@ -1,3 +1,9 @@
+/*
+  ---------------------
+  Model: Feedback.java
+  ---------------------
+*/
+
 package com.example.fuelq.Model;
 
 public class Feedback {

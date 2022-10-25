@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19144986
+ * Developer Name    :   H.M. Kasuni Navodya
+ * Function          :   Add Fuel Details (fuelType, arrivingDate, arrivingTime, arrivedLitres)
+ * Implemented Date  :   19th October 2022
+*/
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -28,22 +35,28 @@ import java.util.List;
 
 public class AddFuelDetails extends AppCompatActivity {
 
+    //Variable List
     private EditText arrivingDate, arrivingTime, arrivedLitres;
     private String fuelType;
+
+    //EndPoint
+    String URL = EndPointURL.GET_ALL_FUEL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_fuel_details);
 
+        //Set the titleBar icon
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
 
+        //Set the spinner details
         final List<String> ownerfuelType = Arrays.asList("Petrol", "Diesel");
-
         final Spinner spinnerFuelType = findViewById(R.id.spinner_fuelType);
 
+        //Get all UI components to variables
         arrivingDate = findViewById(R.id.editTxt_date);
         arrivingTime = findViewById(R.id.editTxtTime);
         arrivedLitres = findViewById(R.id.editTxt_arriving);
@@ -54,16 +67,12 @@ public class AddFuelDetails extends AppCompatActivity {
         spinnerFuelType.setAdapter(adapterFuelType);
 
         spinnerFuelType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 fuelType = spinnerFuelType.getSelectedItem().toString();
-                //Toast.makeText(getApplicationContext(), "You selected: " + customerFuelType, Toast.LENGTH_LONG).show();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
@@ -82,11 +91,14 @@ public class AddFuelDetails extends AppCompatActivity {
         }
     }
 
+    /**********************************************************************************
+     * @DeveloperID   :   IT19144986
+     * @Developer     :   H.M. Kasuni Navodya
+     * @Function      :   Submit the Fuel Details to database
+     **********************************************************************************/
     private boolean postDataUsingVolley(String arrivingDate, String arrivingTime, String arrivedLitres, String fuelType) {
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-            String URL = EndPointURL.GET_ALL_FUEL;
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id", null);

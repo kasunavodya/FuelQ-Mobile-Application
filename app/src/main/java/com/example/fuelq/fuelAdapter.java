@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19144986
+ * Developer Name    :   H.M. Kasuni Navodya
+ * Function          :   Adapter class for handle fuel details
+ * Implemented Date  :   20th October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.Context;
@@ -7,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fuelq.Model.Fuel;
@@ -57,6 +63,7 @@ public class fuelAdapter extends RecyclerView.Adapter<fuelAdapter.ViewHolder> {
             arrivedLitres = itemView.findViewById(R.id.txt_litres);
             remainLitres = itemView.findViewById(R.id.txt_arriving4);
 
+            //Handle the update and delete interfaces navigation
             itemView.findViewById(R.id.btn_edit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
