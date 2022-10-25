@@ -47,7 +47,7 @@ public class CustomerRegistration extends AppCompatActivity{
         vehicleNo = (EditText) findViewById(R.id.editTxtVehNumber);
 
         final List<String> vehicleType = Arrays.asList("Bike", "Car", "Van", "Bus", "Three-Wheel", "Lorry");
-        final List<String> fuelType = Arrays.asList("Auto Diesel", "Super Diesel", "Octane 95", "Octane 92");
+        final List<String> fuelType = Arrays.asList("Petrol", "Diesel");
 
         final Spinner spinnerVehicleType = findViewById(R.id.spinnerVehType);
         final Spinner spinnerFuelType = findViewById(R.id.spinnerFuelType);

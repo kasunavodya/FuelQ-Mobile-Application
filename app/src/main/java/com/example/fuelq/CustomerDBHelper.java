@@ -6,8 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import androidx.annotation.Nullable;
+
 public class CustomerDBHelper extends SQLiteOpenHelper {
-    public CustomerDBHelper(Context context) {
+    String fuelType = "";
+    public CustomerDBHelper(@Nullable Context context) {
         super(context, "Login.db", null, 1);
     }
 
@@ -44,6 +47,17 @@ public class CustomerDBHelper extends SQLiteOpenHelper {
             return true;
         else
             return false;
+    }
+
+    String getFuelType(String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] args = {email};
+        Cursor cursor = db.rawQuery("Select fuelType from customers where email = ?", args, null);
+//        Cursor cursor = db.rawQuery("Select fuelType from customers where email = ?", new String[] {email});
+        if(cursor.moveToFirst()){
+            fuelType = cursor.getString(0);
+        }
+        return fuelType;
     }
 
 }

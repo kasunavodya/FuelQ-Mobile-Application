@@ -54,6 +54,7 @@ public class CustomerLogin extends AppCompatActivity {
                             startActivity(intent);
                         } else{
                             Intent intent = new Intent(getApplicationContext(), CustomerHome.class);
+                            intent.putExtra("email", userEmail);
                             startActivity(intent);
                         }
                     }else{
