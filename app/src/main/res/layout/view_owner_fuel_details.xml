@@ -101,6 +101,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/float_btn"
+        app:backgroundTint="#0C92DA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.926"
@@ -111,13 +112,27 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvMain"
-        android:layout_width="362dp"
-        android:layout_height="455dp"
+        android:layout_width="365dp"
+        android:layout_height="404dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_refresh"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:text="REFRESH"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.202" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

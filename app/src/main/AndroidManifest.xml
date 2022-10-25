@@ -15,22 +15,22 @@
         android:theme="@style/Theme.FuelQ"
         android:networkSecurityConfig="@xml/network_security_config">
         <activity android:name=".GetFuelDetails" />
-        <activity android:name=".DeleteConfirmation" />
-        <activity android:name=".AddFeedback" />
-        <activity android:name=".FullOrExit" />
-        <activity android:name=".ViewFuelDetails" />
-        <activity android:name=".ReqFuelVolume" />
-        <activity android:name=".ViewQueueFuelDetails" />
-        <activity android:name=".ViewQueueDetails" />
-        <activity android:name=".ViewOwnerFuelDetails" />
-        <activity android:name=".CustomerHome" />
-        <activity android:name=".ShedOwnerHome" />
-        <activity android:name=".UpdateFuelDetails" />
-        <activity android:name=".AddFuelDetails" />
-        <activity android:name=".OwnerRegistration" />
-        <activity android:name=".CustomerRegistration" />
-        <activity android:name=".MainRegistration" />
-        <activity android:name=".CustomerLogin" />
+        <activity android:name=".DeleteConfirmation" android:parentActivityName=".ViewOwnerFuelDetails"/>
+        <activity android:name=".AddFeedback" android:parentActivityName=".FullOrExit"/>
+        <activity android:name=".FullOrExit" android:parentActivityName=".ViewQueueFuelDetails"/>
+        <activity android:name=".ViewFuelDetails" android:parentActivityName=".ReqFuelVolume"/>
+        <activity android:name=".ReqFuelVolume" android:parentActivityName=".ViewQueueFuelDetails"/>
+        <activity android:name=".ViewQueueFuelDetails" android:parentActivityName=".CustomerHome"/>
+        <activity android:name=".ViewQueueDetails" android:parentActivityName=".ShedOwnerHome"/>
+        <activity android:name=".ViewOwnerFuelDetails" android:parentActivityName=".ShedOwnerHome"/>
+        <activity android:name=".CustomerHome" android:parentActivityName=".CustomerLogin"/>
+        <activity android:name=".ShedOwnerHome" android:parentActivityName=".CustomerLogin"/>
+        <activity android:name=".UpdateFuelDetails" android:parentActivityName=".ViewOwnerFuelDetails"/>
+        <activity android:name=".AddFuelDetails" android:parentActivityName=".ViewOwnerFuelDetails"/>
+        <activity android:name=".OwnerRegistration" android:parentActivityName=".MainRegistration"/>
+        <activity android:name=".CustomerRegistration" android:parentActivityName=".MainRegistration"/>
+        <activity android:name=".MainRegistration" android:parentActivityName=".CustomerLogin"/>
+        <activity android:name=".CustomerLogin" android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity" android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

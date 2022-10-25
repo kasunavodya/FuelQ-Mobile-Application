@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
         final TextView txtTopic = findViewById(R.id.txt_topic);
         txtTopic.setOnClickListener(view -> {
 

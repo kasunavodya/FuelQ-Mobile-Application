@@ -31,6 +31,10 @@ public class UpdateFuelDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_fuel_details);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         arrivingDate = findViewById(R.id.editTxt_date);
         arrivingTime = findViewById(R.id.editTxt_time);
         arrivedLitres = findViewById(R.id.editTxt_arriving);
@@ -38,7 +42,7 @@ public class UpdateFuelDetails extends AppCompatActivity {
         fuelType = findViewById(R.id.editTxt_fuelType);
         fuelType.setEnabled(false);
 
-        String fuelId = "635588d3527d5ccc8c7c00ed";
+        String fuelId = "63558711504fcab632d271e7";
         //updateQueueDetails(fuelId);
         getFuelData();
 

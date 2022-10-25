@@ -8,12 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ShedOwnerHome extends AppCompatActivity {
 
-    private String email;
+    private String email, id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shed_owner_home);
+
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_home_24);
 
         Intent intent = getIntent();
         email = intent.getStringExtra("Email");

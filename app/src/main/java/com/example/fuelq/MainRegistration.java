@@ -15,6 +15,10 @@ public class MainRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_registration);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         final Button reg1Btn = findViewById(R.id.btn_customerReg);
         reg1Btn.setOnClickListener(view -> {
 

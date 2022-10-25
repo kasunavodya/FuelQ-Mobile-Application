@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +43,10 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_owner_fuel_details);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         Intent intent = getIntent();
         userEmail = intent.getStringExtra("Email");
 
@@ -60,6 +65,12 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
         final FloatingActionButton btnAdd = findViewById(R.id.floating_add);
         btnAdd.setOnClickListener(view -> {
             Intent activityIntent = new Intent(ViewOwnerFuelDetails.this, AddFuelDetails.class);
+            ViewOwnerFuelDetails.this.startActivity(activityIntent);
+        });
+
+        final Button btnRefresh = findViewById(R.id.btn_refresh);
+        btnRefresh.setOnClickListener(view -> {
+            Intent activityIntent = new Intent(ViewOwnerFuelDetails.this, ViewOwnerFuelDetails.class);
             ViewOwnerFuelDetails.this.startActivity(activityIntent);
         });
     }

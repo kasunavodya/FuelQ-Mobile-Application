@@ -13,6 +13,10 @@ public class ReqFuelVolume extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.req_fuel_volume);
 
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
+
         final Button btnPump = findViewById(R.id.btn_pump);
         btnPump.setOnClickListener(view -> {
 
