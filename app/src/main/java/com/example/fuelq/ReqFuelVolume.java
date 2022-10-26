@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19016108
+ * Developer Name    :   Alwis T.A.D.T.N.D
+ * Function          :   Handling the remaining fuel volume with requested fuel volume
+ * Implemented Date  :   19th October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -37,26 +44,32 @@ import java.util.Map;
 
 public class ReqFuelVolume extends AppCompatActivity {
 
+    //Variable List
     String mngId = "";
     TextView cusMongoID;
     EditText requestedFuelVolume;
-    String CustomerAPI = EndPointURL.GET_ALL_CUSTOMER;
     String email = "";
     String customerId = "";
     Fuel FuelModel;
     Integer remainLiters = 0;
     Integer finalLiters = 0;
+
+    //EndPoint
+    String CustomerAPI = EndPointURL.GET_ALL_CUSTOMER;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.req_fuel_volume);
 
+        //Get all UI components to variables
         requestedFuelVolume = findViewById(R.id.editTxt_f_vol);
         cusMongoID = findViewById(R.id.txt_customerMongoID);
 
+        //get customer information
         getAllCustomerInfo();
 
-
+        //Set the titleBar icon
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
@@ -67,11 +80,12 @@ public class ReqFuelVolume extends AppCompatActivity {
         email = intent.getExtras().getString("Email");
         remainLiters = intent.getIntExtra("remainLiters", 0);
 
-
         String customerMDBId = cusMongoID.getText().toString();
 
+        //Get the remaining fuel volume
         getFuelDataForRemainingVol(fuelId);
 
+        //Handling the fuel pump button to update the fuel volume
         final Button btnPump = findViewById(R.id.btn_pump);
         btnPump.setOnClickListener(view -> {
             if(requestedFuelVolume.equals("")){
@@ -80,11 +94,15 @@ public class ReqFuelVolume extends AppCompatActivity {
                 finalLiters = remainLiters - Integer.parseInt(requestedFuelVolume.getText().toString());
                 Log.i("FUELCOUNT", "onCreate: " + requestedFuelVolume.getText().toString());
                 updateFuelRemainVol(fuelId, finalLiters);
-                //Intent activityIntent = new Intent(ReqFuelVolume.this, ViewFuelDetails.class);
-//           ReqFuelVolume.this.startActivity(activityIntent);
             }
         });
     }
+
+    /**********************************************************************************
+     * @DeveloperID   :   IT19016108
+     * @Developer     :   Alwis T.A.D.T.N.D
+     * @Function      :   Get customer details by id
+     **********************************************************************************/
 
     private void getAllCustomerInfo() {
         RequestQueue queue = Volley.newRequestQueue(ReqFuelVolume.this);
@@ -106,7 +124,6 @@ public class ReqFuelVolume extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -116,6 +133,12 @@ public class ReqFuelVolume extends AppCompatActivity {
         });
         queue.add(jsonArrayRequest);
     }
+
+    /**********************************************************************************
+     * @DeveloperID   :   IT19016108
+     * @Developer     :   Alwis T.A.D.T.N.D
+     * @Function      :   Get fuel data for remaining fuel volume
+     **********************************************************************************/
 
     private void getFuelDataForRemainingVol(String id) {
 
@@ -154,6 +177,12 @@ public class ReqFuelVolume extends AppCompatActivity {
     }
 
 
+    /**********************************************************************************
+     * @DeveloperID   :   IT19016108
+     * @Developer     :   Alwis T.A.D.T.N.D
+     * @Function      :   Updating the remaining fuel volume
+     **********************************************************************************/
+
     public void updateFuelRemainVol(String id, Integer remainVol){
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -173,8 +202,6 @@ public class ReqFuelVolume extends AppCompatActivity {
                 Log.e("api", "onErrorResponse: "+error.getLocalizedMessage());
             }
         }) {
-
-
             @Override
             public byte[] getBody() {
                 String body="{\"id\":" + "\"" + FuelModel.getId() + "\"," +
@@ -187,7 +214,6 @@ public class ReqFuelVolume extends AppCompatActivity {
                 Log.e("UPDATE DATA", "getBody: "+body.getBytes());
                 return body.getBytes();
             }
-
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers=new HashMap<String, String>();

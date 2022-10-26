@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19016108
+ * Developer Name    :   Alwis T.A.D.T.N.D
+ * Function          :   View queue Fuel Details
+ * Implemented Date  :   17th October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -30,19 +37,23 @@ import java.util.ArrayList;
 
 public class ViewQueueFuelDetails extends AppCompatActivity {
 
+    //Variable List
     ArrayList<String> allFuelList;
     TextView inputFuelType, location, id, remainFuelLiters, mongoID;
-    String FuelAPI = EndPointURL.GET_ALL_FUEL;
-    String OwnerAPI = EndPointURL.GET_ALL_OWNER;
     String stationLocation = "";
-//    Integer liters = 0;
     String liters = "";
     String mngId = "";
+
+    //EndPoint list
+    String FuelAPI = EndPointURL.GET_ALL_FUEL;
+    String OwnerAPI = EndPointURL.GET_ALL_OWNER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_queue_fuel_details);
+
+        //Get all UI components to variables
         id = findViewById(R.id.txt_fuelStation);
         inputFuelType = findViewById(R.id.txt_fuel);
         location = findViewById(R.id.txt_fuelLocation);
@@ -63,22 +74,21 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
         //Get fuel station details
         getAllFuelData(fuelType, fuelStation);
         getOwnerStationData(fuelStation);
-
         Log.i("liters", "onCreate: " + liters);
         Log.i("location", "onCreate: " + stationLocation);
+
         //Set Text Values
         id.setText(fuelStation);
         inputFuelType.setText(fuelType);
 
         int fuelRemainVol = Integer.parseInt(remainFuelLiters.getText().toString());
 
-
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
 
+        //Handle the join queue button navigation
         final Button btnJoin = findViewById(R.id.btn_join);
-
         btnJoin.setOnClickListener(view -> {
             String fuelMngId = mongoID.getText().toString();
             Intent joinIntent = new Intent(ViewQueueFuelDetails.this, ReqFuelVolume.class);
@@ -88,6 +98,7 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
             ViewQueueFuelDetails.this.startActivity(joinIntent);
         });
 
+        //Handle the exit queue button navigation
         final Button btnExit = findViewById(R.id.btn_exit);
         btnExit.setOnClickListener(view -> {
             Intent existIntent = new Intent(ViewQueueFuelDetails.this, CustomerHome.class);
@@ -95,6 +106,12 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
         });
 
     }
+
+    /**********************************************************************************
+     * @DeveloperID   :   IT19016108
+     * @Developer     :   Alwis T.A.D.T.N.D
+     * @Function      :   Get fuel details according the selected fuel station
+     **********************************************************************************/
 
     private void getAllFuelData(String fuel, String station) {
 
@@ -119,8 +136,6 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
                               liters = remainLitres;
                               remainFuelLiters.setText(liters);
                               mongoID.setText(mngId);
-//                              joinIntent.putExtra("mongoId", mngId);
-
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -135,6 +150,12 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
         });
         queue.add(jsonArrayRequest);
     }
+
+    /**********************************************************************************
+     * @DeveloperID   :   IT19016108
+     * @Developer     :   Alwis T.A.D.T.N.D
+     * @Function      :   Get the relevant station details
+     **********************************************************************************/
 
     private void getOwnerStationData(String station) {
 
