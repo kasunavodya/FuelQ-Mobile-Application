@@ -1,3 +1,9 @@
+/*
+  ---------------------
+     Model: Fuel.java
+  ---------------------
+*/
+
 package com.example.fuelq.Model;
 
 public class Fuel {

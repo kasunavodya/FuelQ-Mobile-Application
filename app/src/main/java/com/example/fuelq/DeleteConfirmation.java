@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19144986
+ * Developer Name    :   H.M. Kasuni Navodya
+ * Function          :   Handle the fuel details delete confirmation
+ * Implemented Date  :   21st October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -20,10 +27,12 @@ public class DeleteConfirmation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirm_delete);
 
+        //Set the titleBar icon
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
 
+        //Handle the delete button navigation
         final Button BtnDelete = findViewById(R.id.btn_delete);
         BtnDelete.setOnClickListener(view -> {
             Intent activityIntent = new Intent(DeleteConfirmation.this, ViewOwnerFuelDetails.class);
@@ -32,14 +41,19 @@ public class DeleteConfirmation extends AppCompatActivity {
             exitFuelApi();
         });
 
+        //Handle the cancel button navigation
         final Button BtnCancel = findViewById(R.id.btn_cancel);
         BtnCancel.setOnClickListener(view -> {
-
             Intent activityIntent = new Intent(DeleteConfirmation.this, ViewOwnerFuelDetails.class);
             DeleteConfirmation.this.startActivity(activityIntent);
         });
     }
 
+    /**********************************************************************************
+     * @DeveloperID   :   IT19144986
+     * @Developer     :   H.M. Kasuni Navodya
+     * @Function      :   Delete the selected fuel details from database.
+     **********************************************************************************/
     private void exitFuelApi() {
         RequestQueue queue = Volley.newRequestQueue(this);
         String deleteURL = EndPointURL.DELETE_FUEL_BY_ID;

@@ -2,6 +2,8 @@ package com.example.fuelq.EndPoints;
 
 public class EndPointURL {
 
+    //EndPoint IP addresses list
+
     public static final String GET_ALL_CUSTOMER = "https://fuelq.herokuapp.com/api/Customer";
     public static final String GET_ALL_OWNER = "https://fuelq.herokuapp.com/api/Owner";
     public static final String GET_ALL_FUEL = "https://fuelq.herokuapp.com/api/Fuel";
