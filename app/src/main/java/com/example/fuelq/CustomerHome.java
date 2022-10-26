@@ -73,6 +73,7 @@ public class CustomerHome extends AppCompatActivity {
             Intent activityIntent = new Intent(CustomerHome.this, ViewQueueFuelDetails.class);
             activityIntent.putExtra("fuelStation", SelectedFuelStation);
             activityIntent.putExtra("FuelType", fuelType);
+            activityIntent.putExtra("Email", email);
             CustomerHome.this.startActivity(activityIntent);
 
         });

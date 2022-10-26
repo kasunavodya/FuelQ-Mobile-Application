@@ -31,13 +31,14 @@ import java.util.ArrayList;
 public class ViewQueueFuelDetails extends AppCompatActivity {
 
     ArrayList<String> allFuelList;
-    TextView inputFuelType, location, id, remainFuelLiters;
+    TextView inputFuelType, location, id, remainFuelLiters, mongoID;
     String FuelAPI = EndPointURL.GET_ALL_FUEL;
     String OwnerAPI = EndPointURL.GET_ALL_OWNER;
-    String mngId = "";
     String stationLocation = "";
 //    Integer liters = 0;
     String liters = "";
+    String mngId = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +47,15 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
         inputFuelType = findViewById(R.id.txt_fuel);
         location = findViewById(R.id.txt_fuelLocation);
         remainFuelLiters = findViewById(R.id.txt_f_vol);
+        mongoID = findViewById(R.id.txt_mongoid);
 
         //Get Customer email Address
         Intent intent = getIntent();
         String fuelStation = intent.getExtras().getString("fuelStation");
         String fuelType = intent.getExtras().getString("FuelType");
+        String custEmail = intent.getExtras().getString("Email");
+
+
         allFuelList = new ArrayList<>();
         Log.i("station", "onCreate: " + fuelStation);
         Log.i("fuelType", "onCreate: " + fuelType);
@@ -61,11 +66,11 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
 
         Log.i("liters", "onCreate: " + liters);
         Log.i("location", "onCreate: " + stationLocation);
-        Log.i("MID", "onCreate: " + mngId);
         //Set Text Values
         id.setText(fuelStation);
         inputFuelType.setText(fuelType);
-//        location.setText(stationLocation);
+
+        int fuelRemainVol = Integer.parseInt(remainFuelLiters.getText().toString());
 
 
         getSupportActionBar().setTitle("");
@@ -73,15 +78,20 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
 
         final Button btnJoin = findViewById(R.id.btn_join);
+
         btnJoin.setOnClickListener(view -> {
-            Intent activityIntent = new Intent(ViewQueueFuelDetails.this, ReqFuelVolume.class);
-            ViewQueueFuelDetails.this.startActivity(activityIntent);
+            String fuelMngId = mongoID.getText().toString();
+            Intent joinIntent = new Intent(ViewQueueFuelDetails.this, ReqFuelVolume.class);
+            joinIntent.putExtra("Key", fuelMngId);
+            joinIntent.putExtra("Email", custEmail);
+            joinIntent.putExtra("remainLiters", fuelRemainVol);
+            ViewQueueFuelDetails.this.startActivity(joinIntent);
         });
 
         final Button btnExit = findViewById(R.id.btn_exit);
         btnExit.setOnClickListener(view -> {
-            Intent activityIntent = new Intent(ViewQueueFuelDetails.this, CustomerHome.class);
-            ViewQueueFuelDetails.this.startActivity(activityIntent);
+            Intent existIntent = new Intent(ViewQueueFuelDetails.this, CustomerHome.class);
+            ViewQueueFuelDetails.this.startActivity(existIntent);
         });
 
     }
@@ -108,6 +118,9 @@ public class ViewQueueFuelDetails extends AppCompatActivity {
                               mngId = id;
                               liters = remainLitres;
                               remainFuelLiters.setText(liters);
+                              mongoID.setText(mngId);
+//                              joinIntent.putExtra("mongoId", mngId);
+
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
