@@ -49,6 +49,7 @@ public class CustomerLogin extends AppCompatActivity {
                     if(userType.moveToFirst()){
                         type = userType.getString(0);
                     }
+                    //Check user type and navigate
                     if(checkUserPass == true){
                         Toast.makeText(CustomerLogin.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                         Log.i("USERTYPE", type);

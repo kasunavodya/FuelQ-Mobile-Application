@@ -68,7 +68,6 @@ public class OwnerRegistration extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 ownerLocation = spinnerLocationType.getSelectedItem().toString();
-                //Toast.makeText(getApplicationContext(), "You selected: " + customerFuelType, Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -87,6 +86,7 @@ public class OwnerRegistration extends AppCompatActivity {
                     if (checkOwner == false) {
                         Boolean insertOwner = shedOwnerDBHelper.insertData(ownerEmail.getText().toString(), ownerName.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation);
                         Boolean insertUser = userDBHelper.insertData(ownerEmail.getText().toString(), ownerPassword.getText().toString(), "OWNER");
+
                         // calling a method to post the data and passing our name and job.
                         postDataUsingVolley(ownerName.getText().toString(), ownerEmail.getText().toString(), ownerPassword.getText().toString(), ownerContact.getText().toString(), ownerFuelStation.getText().toString(), ownerLocation);
                         if (insertOwner == true && insertUser == true) {
@@ -112,6 +112,7 @@ public class OwnerRegistration extends AppCompatActivity {
         });
     }
 
+    //Post Owner's data into Mongo Db: Resources - https://www.geeksforgeeks.org/how-to-post-data-to-api-using-volley-in-android/
     private boolean postDataUsingVolley(String ownerName, String ownerEmail, String ownerPassword, String ownerContact, String ownerFuelStation, String ownerLocation){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);

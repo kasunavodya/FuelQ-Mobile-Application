@@ -104,6 +104,7 @@ public class CustomerRegistration extends AppCompatActivity{
                 String vehType = valueForType;
                 String fuel = valueForFuel;
 
+                //Customer Reg using SQLite Db and validations for user
                 if (emailAdd.equals("") || password.equals("") || repassword.equals("")) {
                     Toast.makeText(CustomerRegistration.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 } else {
@@ -142,6 +143,7 @@ public class CustomerRegistration extends AppCompatActivity{
         });
     }
 
+    //Post Customer's data into Mongo Db: Resources - https://www.geeksforgeeks.org/how-to-post-data-to-api-using-volley-in-android/
     private boolean postDataUsingVolley(String customerEmail, String customerPassword, String customerVehicleNumber, String customerVehicleType, String customerFuelType){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
