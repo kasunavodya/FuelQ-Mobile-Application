@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19016108
+ * Developer Name    :   Alwis T.A.D.T.N.D
+ * Function          :   Function for searching the fuel queue
+ * Implemented Date  :   16th October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -32,8 +39,11 @@ import java.util.List;
 
 public class CustomerHome extends AppCompatActivity {
 
+    //EndPoint list
     String api = EndPointURL.GET_ALL_CUSTOMER;
     String OwnerAPI = EndPointURL.GET_ALL_OWNER;
+
+    //Variable list
     Spinner fuelStationSpinner;
     ArrayList<String> fuelStationsList, sample;
     String SelectedFuelStation;
@@ -49,6 +59,7 @@ public class CustomerHome extends AppCompatActivity {
         customerDBHelper = new CustomerDBHelper(this);
         fuelStationSpinner = findViewById(R.id.spinner_station);
 
+        //Set the titleBar icon
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24);
@@ -73,10 +84,17 @@ public class CustomerHome extends AppCompatActivity {
             Intent activityIntent = new Intent(CustomerHome.this, ViewQueueFuelDetails.class);
             activityIntent.putExtra("fuelStation", SelectedFuelStation);
             activityIntent.putExtra("FuelType", fuelType);
+            activityIntent.putExtra("Email", email);
             CustomerHome.this.startActivity(activityIntent);
 
         });
     }
+
+    /**********************************************************************************
+     * @DeveloperID   :   IT19016108
+     * @Developer     :   Alwis T.A.D.T.N.D
+     * @Function      :   Get all fuel stations to spinner
+     **********************************************************************************/
 
     private void getAllFuelInfo() {
         RequestQueue queue = Volley.newRequestQueue(CustomerHome.this);
@@ -94,7 +112,6 @@ public class CustomerHome extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-              // ArrayAdapter adapterFuelStation = new ArrayAdapter(this, android.R.layout.simple_spinner_item, fuelStationsList);
                 fuelStationSpinner.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, fuelStationsList));
                 fuelStationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override

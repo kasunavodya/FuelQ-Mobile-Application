@@ -155,6 +155,7 @@ public class CustomerRegistration extends AppCompatActivity{
             jsonObject.put("customerVehicleNumber", customerVehicleNumber);
             jsonObject.put("customerVehicleType", customerVehicleType);
             jsonObject.put("customerFuelType", customerFuelType);
+            jsonObject.put("token", 0);
             final String mRequestBody = jsonObject.toString();
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
