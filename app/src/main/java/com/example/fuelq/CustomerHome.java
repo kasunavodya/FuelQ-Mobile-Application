@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
@@ -42,6 +43,7 @@ public class CustomerHome extends AppCompatActivity {
     //EndPoint list
     String api = EndPointURL.GET_ALL_CUSTOMER;
     String OwnerAPI = EndPointURL.GET_ALL_OWNER;
+    String FuelAPI = EndPointURL.GET_ALL_FUEL;
 
     //Variable list
     Spinner fuelStationSpinner;
@@ -50,6 +52,9 @@ public class CustomerHome extends AppCompatActivity {
     CustomerDBHelper customerDBHelper;
     String fuelType = "";
     String selectedFuelType = "";
+    TextView availability, fuelStationSelected;
+    Boolean ava = false;
+    String status = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,8 @@ public class CustomerHome extends AppCompatActivity {
 
         customerDBHelper = new CustomerDBHelper(this);
         fuelStationSpinner = findViewById(R.id.spinner_station);
+        availability = findViewById(R.id.txt_fuelAvailability);
+        fuelStationSelected = findViewById(R.id.txt_selectedFuelStation);
 
         //Set the titleBar icon
         getSupportActionBar().setTitle("");
@@ -80,14 +87,46 @@ public class CustomerHome extends AppCompatActivity {
         fuelType = customerDBHelper.getFuelType(email);
 
         btnCheck.setOnClickListener(view -> {
-
+            getRemainLiters(fuelType, fuelStationSelected.getText().toString());
             Intent activityIntent = new Intent(CustomerHome.this, ViewQueueFuelDetails.class);
-            activityIntent.putExtra("fuelStation", SelectedFuelStation);
+            activityIntent.putExtra("fuelStation", fuelStationSelected.getText().toString());
             activityIntent.putExtra("FuelType", fuelType);
             activityIntent.putExtra("Email", email);
+            activityIntent.putExtra("Availability", availability.getText().toString());
             CustomerHome.this.startActivity(activityIntent);
-
         });
+    }
+
+    private void getRemainLiters(String fuelType, String fuelStation) {
+        RequestQueue queue = Volley.newRequestQueue(CustomerHome.this);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, FuelAPI, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject responseObj = response.getJSONObject(i);
+                        String fuelRemLiters = responseObj.getString("remainLitres");
+                        String station = responseObj.getString("fuelStation");
+                        String fType = responseObj.getString("fuelType");
+                        if(fuelType.equals(fType) && station.equals(fuelStation)){
+                            if(fuelRemLiters.equals("0")){
+                                ava = false;
+                            }else{
+                                ava = true;
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(CustomerHome.this, "Fail to get the fuel stations data..", Toast.LENGTH_SHORT).show();
+            }
+        });
+        queue.add(jsonArrayRequest);
     }
 
     /**********************************************************************************
@@ -117,6 +156,7 @@ public class CustomerHome extends AppCompatActivity {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         SelectedFuelStation = fuelStationSpinner.getSelectedItem().toString();
+                        fuelStationSelected.setText(SelectedFuelStation);
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {
