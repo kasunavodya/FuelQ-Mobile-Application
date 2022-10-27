@@ -60,6 +60,7 @@ public class ViewQueueDetails extends AppCompatActivity {
                             for(int i = 0; i < jsonArray.length(); i++){
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                                 Customer customerModel = new Customer(
+                                        jsonObject.getString("id"),
                                         jsonObject.getString("customerEmail"),
                                         jsonObject.getString("customerPassword"),
                                         jsonObject.getInt("customerVehicleNumber"),
