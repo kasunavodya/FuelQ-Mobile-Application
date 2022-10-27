@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19020822
+ * Developer Name    :   Dilshan K.G.T
+ * Class             :   Customer DB Helper.java
+ * Implemented Date  :   18th October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.ContentValues;
@@ -5,7 +12,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import androidx.annotation.Nullable;
 
 public class CustomerDBHelper extends SQLiteOpenHelper {
@@ -53,7 +59,6 @@ public class CustomerDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String[] args = {email};
         Cursor cursor = db.rawQuery("Select fuelType from customers where email = ?", args, null);
-//        Cursor cursor = db.rawQuery("Select fuelType from customers where email = ?", new String[] {email});
         if(cursor.moveToFirst()){
             fuelType = cursor.getString(0);
         }

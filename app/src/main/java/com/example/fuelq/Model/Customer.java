@@ -17,8 +17,9 @@ public class Customer {
     String arrivalTimeQ;
     String departTimeQ;
     int requestedLitres;
+    String shedQ;
 
-    public Customer(String customerEmail, String customerPassword, int customerVehicleNumber, String customerVehicleType, String customerFuelType, String awaitingTime, int token, String arrivalTimeQ, String departTimeQ, int requestedLitres) {
+    public Customer(String customerEmail, String customerPassword, int customerVehicleNumber, String customerVehicleType, String customerFuelType, String awaitingTime, int token, String arrivalTimeQ, String departTimeQ, int requestedLitres, String shedQ) {
         this.customerEmail = customerEmail;
         this.customerPassword = customerPassword;
         this.customerVehicleNumber = customerVehicleNumber;
@@ -29,6 +30,7 @@ public class Customer {
         this.arrivalTimeQ = arrivalTimeQ;
         this.departTimeQ = departTimeQ;
         this.requestedLitres = requestedLitres;
+        this.shedQ = shedQ;
     }
 
     public String getCustomerEmail() {
@@ -109,5 +111,13 @@ public class Customer {
 
     public void setRequestedLitres(int requestedLitres) {
         this.requestedLitres = requestedLitres;
+    }
+
+    public String getShedQ() {
+        return shedQ;
+    }
+
+    public void setShedQ(String shedQ) {
+        this.shedQ = shedQ;
     }
 }

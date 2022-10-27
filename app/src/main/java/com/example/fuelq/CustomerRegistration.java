@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19020822
+ * Developer Name    :   Dilshan K.G.T
+ * Function          :   Create account for Customer
+ * Implemented Date  :   18th October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -104,6 +111,7 @@ public class CustomerRegistration extends AppCompatActivity{
                 String vehType = valueForType;
                 String fuel = valueForFuel;
 
+                //Customer Reg using SQLite Db and validations for user
                 if (emailAdd.equals("") || password.equals("") || repassword.equals("")) {
                     Toast.makeText(CustomerRegistration.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 } else {
@@ -142,6 +150,7 @@ public class CustomerRegistration extends AppCompatActivity{
         });
     }
 
+    //Post Customer's data into Mongo Db: Resources - https://www.geeksforgeeks.org/how-to-post-data-to-api-using-volley-in-android/
     private boolean postDataUsingVolley(String customerEmail, String customerPassword, String customerVehicleNumber, String customerVehicleType, String customerFuelType){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -155,7 +164,6 @@ public class CustomerRegistration extends AppCompatActivity{
             jsonObject.put("customerVehicleNumber", customerVehicleNumber);
             jsonObject.put("customerVehicleType", customerVehicleType);
             jsonObject.put("customerFuelType", customerFuelType);
-            jsonObject.put("token", 0);
             final String mRequestBody = jsonObject.toString();
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {

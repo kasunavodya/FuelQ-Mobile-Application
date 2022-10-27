@@ -1,3 +1,8 @@
+/*
+ * Class             :   Homepage of FuelQ Application
+ * Implemented Date  :   18th October 2022
+ */
+
 package com.example.fuelq;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Set the titleBar icon
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
@@ -21,11 +27,14 @@ public class MainActivity extends AppCompatActivity {
         txtTopic.setOnClickListener(view -> {
 
             Context context = getApplicationContext();
+
+            //Toast Message
             CharSequence message = "Welcome to FuelQ Application";
             int duration = Toast.LENGTH_SHORT; //How long the toast message will lasts
             Toast toast = Toast.makeText(context, message, duration);
             toast.show();
 
+            //Navigate to the login page
             Intent activityIntent = new Intent(MainActivity.this, CustomerLogin.class);
             MainActivity.this.startActivity(activityIntent);
         });

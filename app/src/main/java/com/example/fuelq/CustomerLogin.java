@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19020822
+ * Developer Name    :   Dilshan K.G.T
+ * Function          :   Customer & Shed Owner logging to the application
+ * Implemented Date  :   18th October 2022
+ */
+
 package com.example.fuelq;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,6 +56,7 @@ public class CustomerLogin extends AppCompatActivity {
                     if(userType.moveToFirst()){
                         type = userType.getString(0);
                     }
+                    //Check user type and navigate
                     if(checkUserPass == true){
                         Toast.makeText(CustomerLogin.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                         Log.i("USERTYPE", type);
