@@ -15,5 +15,5 @@ public class EndPointURL {
     public static final String GET_ALL_FEEDBACK = "https://fuelq.herokuapp.com/api/Feedback";
     public static final String GET_OWNER_BY_EMAIL = "https://fuelq.herokuapp.com/OwnerService/";
     public static final String GET_QUEUE_BY_SHEDNAME= "https://fuelq.herokuapp.com/CustomerService/";
-    //public static final String GET_FUEL_LIST_BY_STATION= "https://fuelq.herokuapp.com/CustomerService/";
+    public static final String GET_FUEL_LIST_BY_STATION= "https://fuelq.herokuapp.com/FuelService/";
 }

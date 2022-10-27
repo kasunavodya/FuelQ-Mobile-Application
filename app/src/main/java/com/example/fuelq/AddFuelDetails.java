@@ -37,7 +37,7 @@ public class AddFuelDetails extends AppCompatActivity {
 
     //Variable List
     private EditText arrivingDate, arrivingTime, arrivedLitres;
-    private String fuelType;
+    private String fuelType, fuelStation;
 
     //EndPoint
     String URL = EndPointURL.GET_ALL_FUEL;
@@ -85,7 +85,7 @@ public class AddFuelDetails extends AppCompatActivity {
                 AddFuelDetails.this.startActivity(activityIntent);
 
                 // calling a method to post the data and passing our name and job.
-                postDataUsingVolley(arrivingDate.getText().toString(), arrivingTime.getText().toString(), arrivedLitres.getText().toString(), fuelType);
+                postDataUsingVolley(fuelStation, arrivingDate.getText().toString(), arrivingTime.getText().toString(), arrivedLitres.getText().toString(), fuelType);
                 Toast.makeText(AddFuelDetails.this, "Data Registered Successfully", Toast.LENGTH_LONG).show();
             });
         }
@@ -96,12 +96,13 @@ public class AddFuelDetails extends AppCompatActivity {
      * @Developer     :   H.M. Kasuni Navodya
      * @Function      :   Submit the Fuel Details to database
      **********************************************************************************/
-    private boolean postDataUsingVolley(String arrivingDate, String arrivingTime, String arrivedLitres, String fuelType) {
+    private boolean postDataUsingVolley(String fuelStation, String arrivingDate, String arrivingTime, String arrivedLitres, String fuelType) {
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id", null);
+            jsonObject.put("Station 005", fuelStation);
             jsonObject.put("arrivingDate", arrivingDate);
             jsonObject.put("arrivingTime", arrivingTime);
             jsonObject.put("arrivedLitres", arrivedLitres);
