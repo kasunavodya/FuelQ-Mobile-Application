@@ -7,6 +7,7 @@
 package com.example.fuelq.Model;
 
 public class Customer {
+    String id;
     String customerEmail;
     String customerPassword;
     int customerVehicleNumber;
@@ -17,8 +18,13 @@ public class Customer {
     String arrivalTimeQ;
     String departTimeQ;
     int requestedLitres;
+    String shedQ;
 
-    public Customer(String customerEmail, String customerPassword, int customerVehicleNumber, String customerVehicleType, String customerFuelType, String awaitingTime, int token, String arrivalTimeQ, String departTimeQ, int requestedLitres) {
+    public Customer() {
+    }
+
+    public Customer(String id, String customerEmail, String customerPassword, int customerVehicleNumber, String customerVehicleType, String customerFuelType, String awaitingTime, int token, String arrivalTimeQ, String departTimeQ, int requestedLitres, String shedQ) {
+        this.id = id;
         this.customerEmail = customerEmail;
         this.customerPassword = customerPassword;
         this.customerVehicleNumber = customerVehicleNumber;
@@ -29,6 +35,15 @@ public class Customer {
         this.arrivalTimeQ = arrivalTimeQ;
         this.departTimeQ = departTimeQ;
         this.requestedLitres = requestedLitres;
+        this.shedQ = shedQ;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCustomerEmail() {
@@ -109,5 +124,13 @@ public class Customer {
 
     public void setRequestedLitres(int requestedLitres) {
         this.requestedLitres = requestedLitres;
+    }
+
+    public String getShedQ() {
+        return shedQ;
+    }
+
+    public void setShedQ(String shedQ) {
+        this.shedQ = shedQ;
     }
 }

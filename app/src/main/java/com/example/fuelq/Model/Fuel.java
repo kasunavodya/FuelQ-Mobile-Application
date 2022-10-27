@@ -25,6 +25,9 @@ public class Fuel {
         this.remainLitres = remainLitres;
     }
 
+    public Fuel() {
+    }
+
     public String getId() {
         return id;
     }
