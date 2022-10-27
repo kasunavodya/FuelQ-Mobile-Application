@@ -65,7 +65,7 @@ public class ShedOwnerHome extends AppCompatActivity {
     private void getOwnerData(String ownerEmail) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String getAPI = OwnerEmailAPI + ownerEmail.trim();
+        String getAPI = OwnerEmailAPI + ownerEmail;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, getAPI,
                 new Response.Listener<String>() {

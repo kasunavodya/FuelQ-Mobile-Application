@@ -45,8 +45,9 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
     private String userEmail;
 
     //EndPoint list
-    String FuelAPI = EndPointURL.GET_ALL_FUEL;
+    //String FuelAPI = EndPointURL.GET_ALL_FUEL;
     String OwnerEmailAPI = EndPointURL.GET_OWNER_BY_EMAIL;
+    String FuelShedAPI = EndPointURL.GET_FUEL_LIST_BY_STATION;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,7 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
 
         buildRecyclerView();
         getOwnerData(userEmail);
-        getAllFuelData();
+        //getAllFuelData();
 
         //Handle the floating button navigation
         final FloatingActionButton btnAdd = findViewById(R.id.floating_add);
@@ -99,39 +100,41 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
     private void getOwnerData(String ownerEmail) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String getAPI = OwnerEmailAPI + ownerEmail.trim();
+            String getAPI = OwnerEmailAPI + ownerEmail;
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, getAPI,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            Owner ownerModel = new Owner(
-                                    jsonObject.getString("ownerName"),
-                                    jsonObject.getString("ownerEmail"),
-                                    jsonObject.getString("ownerPassword"),
-                                    jsonObject.getString("ownerContact"),
-                                    jsonObject.getString("ownerFuelStation"),
-                                    jsonObject.getString("ownerLocation")
-                            );
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, getAPI,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+                                Owner ownerModel = new Owner(
+                                        jsonObject.getString("ownerName"),
+                                        jsonObject.getString("ownerEmail"),
+                                        jsonObject.getString("ownerPassword"),
+                                        jsonObject.getString("ownerContact"),
+                                        jsonObject.getString("ownerFuelStation"),
+                                        jsonObject.getString("ownerLocation")
+                                );
 
-                            FuelStation.setText("Fuel " + ownerModel.getOwnerFuelStation());
-                            FuelLocation.setText(ownerModel.getOwnerLocation() + " Fuel Station");
-                            OwnerName.setText(ownerModel.getOwnerName());
-                            OwnerContact.setText(ownerModel.getOwnerContact());
+                                FuelStation.setText("Fuel " + ownerModel.getOwnerFuelStation());
+                                FuelLocation.setText(ownerModel.getOwnerLocation() + " Fuel Station");
+                                OwnerName.setText(ownerModel.getOwnerName());
+                                OwnerContact.setText(ownerModel.getOwnerContact());
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                                getFuelData(ownerModel.getOwnerFuelStation());
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("api", "onErrorResponse: "+error.getLocalizedMessage());
-            }
-        });
-        queue.add(stringRequest);
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.e("api", "onErrorResponse: " + error.getLocalizedMessage());
+                }
+            });
+            queue.add(stringRequest);
     }
 
     /**********************************************************************************
@@ -140,10 +143,44 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
      * @Function      :   Display All fuel details
      **********************************************************************************/
 
-    private void getAllFuelData() {
+//    private void getAllFuelData() {
+//
+//        RequestQueue queue = Volley.newRequestQueue(ViewOwnerFuelDetails.this);
+//        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, FuelAPI, null, new Response.Listener<JSONArray>() {
+//            @Override
+//            public void onResponse(JSONArray response) {
+//                rcvMain.setVisibility(View.VISIBLE);
+//                for (int i = 0; i < response.length(); i++) {
+//                    try {
+//                        JSONObject responseObj = response.getJSONObject(i);
+//                        String id = responseObj.getString("id");
+//                        String fuelType = responseObj.getString("fuelType");
+//                        String fuelStation = responseObj.getString("fuelStation");
+//                        String arrivingDate = responseObj.getString("arrivingDate");
+//                        String arrivingTime = responseObj.getString("arrivingTime");
+//                        String arrivedLitres = responseObj.getString("arrivedLitres");
+//                        String remainLitres = responseObj.getString("remainLitres");
+//                        allFuelList.add(new Fuel(id, fuelType, fuelStation, arrivingDate, arrivingTime, arrivedLitres, remainLitres));
+//                        buildRecyclerView();
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Toast.makeText(ViewOwnerFuelDetails.this, "Fail to get the fuel data..", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        queue.add(jsonArrayRequest);
+//    }
+
+    private void getFuelData(String shedName) {
 
         RequestQueue queue = Volley.newRequestQueue(ViewOwnerFuelDetails.this);
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, FuelAPI, null, new Response.Listener<JSONArray>() {
+        String getShedAPI = FuelShedAPI + shedName;
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, getShedAPI, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 rcvMain.setVisibility(View.VISIBLE);
