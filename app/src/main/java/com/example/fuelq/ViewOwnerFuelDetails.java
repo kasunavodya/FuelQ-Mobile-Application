@@ -45,8 +45,8 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
     private String userEmail;
 
     //EndPoint list
-    String OwnerAPI = EndPointURL.GET_OWNER_BY_ID;
     String FuelAPI = EndPointURL.GET_ALL_FUEL;
+    String OwnerEmailAPI = EndPointURL.GET_OWNER_BY_EMAIL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +72,7 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
         allFuelList = new ArrayList<>();
 
         buildRecyclerView();
-        getOwnerData();
+        getOwnerData(userEmail);
         getAllFuelData();
 
         //Handle the floating button navigation
@@ -96,10 +96,12 @@ public class ViewOwnerFuelDetails extends AppCompatActivity {
      * @Function      :   Display owner details by owner ID
      **********************************************************************************/
 
-    private void getOwnerData() {
+    private void getOwnerData(String ownerEmail) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, OwnerAPI,
+        String getAPI = OwnerEmailAPI + ownerEmail.trim();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, getAPI,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

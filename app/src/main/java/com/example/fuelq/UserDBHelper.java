@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19020822
+ * Developer Name    :   Dilshan K.G.T
+ * Class             :   User DB Helper.java
+ * Implemented Date  :   18th October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.ContentValues;
@@ -9,9 +16,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class UserDBHelper extends SQLiteOpenHelper {
 
     public UserDBHelper(Context context) {
-
         super(context, "User.db", null, 1);
-
     }
 
     @Override
@@ -60,10 +65,6 @@ public class UserDBHelper extends SQLiteOpenHelper {
     public Cursor getUserType(String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select type from users where email = ? and  password = ?", new String[]{email, password});
-
-//        if(cursor.moveToFirst()){
-//            type = cursor.getString(0);
-//        }
         return cursor;
     }
 }

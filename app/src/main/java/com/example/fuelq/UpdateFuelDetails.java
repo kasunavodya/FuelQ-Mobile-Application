@@ -56,7 +56,7 @@ public class UpdateFuelDetails extends AppCompatActivity {
         fuelType = findViewById(R.id.editTxt_fuelType);
         fuelType.setEnabled(false);
 
-        String fuelId = "63558711504fcab632d271e7";
+        String fuelId = "635960626f0a93e5450c35cc";
         //updateQueueDetails(fuelId);
         getFuelData();
 

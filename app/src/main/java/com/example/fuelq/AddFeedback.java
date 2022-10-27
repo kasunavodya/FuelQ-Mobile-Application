@@ -1,3 +1,10 @@
+/*
+ * Developer ID      :   IT19020822
+ * Developer Name    :   Dilshan K.G.T
+ * Function          :   Add Feedback Details
+ * Implemented Date  :   22nd October 2022
+ */
+
 package com.example.fuelq;
 
 import android.content.Intent;
@@ -8,9 +15,7 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,10 +25,8 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.fuelq.EndPoints.EndPointURL;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.UnsupportedEncodingException;
 
 public class AddFeedback extends AppCompatActivity {

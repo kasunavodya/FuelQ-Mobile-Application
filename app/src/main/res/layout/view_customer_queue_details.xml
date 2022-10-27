@@ -8,199 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/img_triangle2"
-        android:layout_width="275dp"
-        android:layout_height="164dp"
-        android:layout_marginStart="224dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/triangle"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_rectangle"
-        android:layout_width="284dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="60dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/blue_rectangle"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_list"
-        android:layout_width="375dp"
-        android:layout_height="136dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092"
-        app:srcCompat="@drawable/list1"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_list2"
-        android:layout_width="375dp"
-        android:layout_height="136dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24"
-        app:srcCompat="@drawable/list1"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_list3"
-        android:layout_width="375dp"
-        android:layout_height="136dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391"
-        app:srcCompat="@drawable/list1"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_list4"
-        android:layout_width="375dp"
-        android:layout_height="136dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541"
-        app:srcCompat="@drawable/list1"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_list5"
-        android:layout_width="375dp"
-        android:layout_height="136dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689"
-        app:srcCompat="@drawable/list1"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_list6"
-        android:layout_width="375dp"
-        android:layout_height="136dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842"
-        app:srcCompat="@drawable/list1"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_bike"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131"
-        app:srcCompat="@drawable/ic_baseline_pedal_bike_24"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_car"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269"
-        app:srcCompat="@drawable/ic_baseline_directions_car_24"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_van"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402"
-        app:srcCompat="@drawable/ic_baseline_directions_bus_24"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_bus"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
-        app:srcCompat="@drawable/ic_baseline_directions_bus_24"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_lorry"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811"
-        app:srcCompat="@drawable/ic_baseline_directions_bus_24"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/img_threeWheel"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671"
-        app:srcCompat="@drawable/ic_baseline_directions_bus_24"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/txt_BikeTotal"
         android:layout_width="wrap_content"
@@ -211,25 +18,192 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.217"
+        tools:ignore="DuplicateIds" />
 
-    <TextView
-        android:id="@+id/txt_CarTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tot"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:fontFamily="sans-serif-black"
+    <ImageView
+        android:id="@+id/img_triangle2"
+        android:layout_width="275dp"
+        android:layout_height="164dp"
+        android:layout_marginStart="228dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/triangle"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_list"
+        android:layout_width="375dp"
+        android:layout_height="136dp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
+        app:layout_constraintVertical_bias="0.154"
+        app:srcCompat="@drawable/list1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_list2"
+        android:layout_width="375dp"
+        android:layout_height="136dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302"
+        app:srcCompat="@drawable/list1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_list3"
+        android:layout_width="375dp"
+        android:layout_height="136dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453"
+        app:srcCompat="@drawable/list1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_list4"
+        android:layout_width="375dp"
+        android:layout_height="136dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.603"
+        app:srcCompat="@drawable/list1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_list5"
+        android:layout_width="375dp"
+        android:layout_height="136dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.751"
+        app:srcCompat="@drawable/list1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_list6"
+        android:layout_width="375dp"
+        android:layout_height="136dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904"
+        app:srcCompat="@drawable/list1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_bike"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186"
+        app:srcCompat="@drawable/ic_baseline_pedal_bike_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_car"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325"
+        app:srcCompat="@drawable/ic_baseline_directions_car_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_van"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.458"
+        app:srcCompat="@drawable/ic_baseline_directions_bus_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_bus"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.596"
+        app:srcCompat="@drawable/ic_baseline_directions_bus_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_lorry"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.866"
+        app:srcCompat="@drawable/ic_baseline_directions_bus_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_threeWheel"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727"
+        app:srcCompat="@drawable/ic_baseline_directions_bus_24"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/txt_VanTotal"
@@ -241,10 +215,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintVertical_bias="0.473" />
 
     <TextView
         android:id="@+id/txt_BusTotal"
@@ -256,10 +230,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.598" />
 
     <TextView
         android:id="@+id/txt_ThreeWheelTotal"
@@ -271,10 +245,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.727" />
 
     <TextView
         android:id="@+id/txt_LorryTotal"
@@ -286,10 +260,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801" />
+        app:layout_constraintVertical_bias="0.852" />
 
     <TextView
         android:id="@+id/txt_bike"
@@ -301,10 +275,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.206" />
 
     <TextView
         android:id="@+id/txt_car"
@@ -316,10 +290,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.34" />
 
     <TextView
         android:id="@+id/txt_van"
@@ -331,10 +305,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
+        app:layout_constraintVertical_bias="0.469" />
 
     <TextView
         android:id="@+id/txt_bus"
@@ -346,10 +320,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535" />
+        app:layout_constraintVertical_bias="0.588" />
 
     <TextView
         android:id="@+id/txt_lorry"
@@ -361,10 +335,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <TextView
         android:id="@+id/txt_threeWheel"
@@ -376,10 +350,10 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.649" />
+        app:layout_constraintVertical_bias="0.701" />
 
     <ImageView
         android:id="@+id/img_red"
@@ -388,10 +362,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147"
+        app:layout_constraintVertical_bias="0.202"
         app:srcCompat="@drawable/red"
         tools:ignore="MissingConstraints" />
 
@@ -402,10 +376,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279"
+        app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/red"
         tools:ignore="MissingConstraints" />
 
@@ -416,10 +390,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408"
+        app:layout_constraintVertical_bias="0.462"
         app:srcCompat="@drawable/red"
         tools:ignore="MissingConstraints" />
 
@@ -430,10 +404,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
+        app:layout_constraintVertical_bias="0.594"
         app:srcCompat="@drawable/red"
         tools:ignore="MissingConstraints" />
 
@@ -444,10 +418,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663"
+        app:layout_constraintVertical_bias="0.717"
         app:srcCompat="@drawable/red"
         tools:ignore="MissingConstraints" />
 
@@ -458,10 +432,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.799"
+        app:layout_constraintVertical_bias="0.853"
         app:srcCompat="@drawable/red"
         tools:ignore="MissingConstraints" />
 
@@ -469,120 +443,151 @@
         android:id="@+id/txt_displayTotalBike"
         android:layout_width="37dp"
         android:layout_height="42dp"
-        android:text="@string/ten"
+        android:text="10"
         android:textColor="#ffffff"
         android:textSize="25sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.208" />
 
     <TextView
         android:id="@+id/txt_displayTotalCar"
         android:layout_width="37dp"
         android:layout_height="42dp"
-        android:text="@string/ten"
+        android:text="5"
         android:textColor="#ffffff"
         android:textSize="25sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintVertical_bias="0.339" />
 
     <TextView
         android:id="@+id/txt_displayTotalVan"
         android:layout_width="37dp"
         android:layout_height="42dp"
-        android:text="@string/ten"
+        android:text="2"
         android:textColor="#ffffff"
         android:textSize="25sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintVertical_bias="0.462" />
 
     <TextView
         android:id="@+id/txt_displayTotalBus"
         android:layout_width="37dp"
         android:layout_height="42dp"
-        android:text="@string/ten"
+        android:text="1"
         android:textColor="#ffffff"
         android:textSize="25sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintVertical_bias="0.597" />
 
     <TextView
         android:id="@+id/txt_displayTotalThreeWheel"
         android:layout_width="37dp"
         android:layout_height="42dp"
-        android:text="@string/ten"
+        android:text="1"
         android:textColor="#ffffff"
         android:textSize="25sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <TextView
         android:id="@+id/txt_displayTotalLorry"
         android:layout_width="37dp"
         android:layout_height="42dp"
-        android:text="@string/ten"
+        android:text="1"
         android:textColor="#ffffff"
         android:textSize="25sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801" />
+        app:layout_constraintVertical_bias="0.854" />
+
+    <TextView
+        android:id="@+id/txt_CarTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tot"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <TextView
+        android:id="@+id/txt_BikeTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tot"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.217"
+        tools:ignore="DuplicateIds" />
 
     <TextView
         android:id="@+id/txtView_vehCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ten"
-        android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:text="20"
+        android:textColor="#0984D8"
+        android:textSize="70sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.374"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <TextView
         android:id="@+id/txtView_veh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_veh"
-        android:textColor="#ffffff"
+        android:textColor="#0984D8"
         android:textSize="20sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintHorizontal_bias="0.684"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.072" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
