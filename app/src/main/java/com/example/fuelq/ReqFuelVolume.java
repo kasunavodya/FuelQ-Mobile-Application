@@ -109,13 +109,13 @@ public class ReqFuelVolume extends AppCompatActivity {
                     Integer number =Integer.parseInt(tokenNumber.getText().toString()) + 1;
                     updateCustomerInfo(cusMongoID.getText().toString(), number.toString(), fuelStation);
                     System.out.println(cusMongoID.getText().toString() + " MongoCustomer");
+                    //Intent joinIntent = new Intent(ReqFuelVolume.this, FullOrExit.class);
                 }else {
                     Toast.makeText(this, "No enough liters available!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
 
     /**********************************************************************************
      * @DeveloperID   :   IT19016108
@@ -263,6 +263,7 @@ public class ReqFuelVolume extends AppCompatActivity {
         //Define data and time
           DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyy/MM/dd HH:mm:ss");
           LocalDateTime arrTime = LocalDateTime.now();
+        System.out.println(arrTime + "current time");
 
         StringRequest stringRequest = new StringRequest(Request.Method.PUT, updateCustomerdata,
                 new Response.Listener<String>() {
@@ -286,8 +287,10 @@ public class ReqFuelVolume extends AppCompatActivity {
                         "\"customerVehicleType\":" + "\"" + CustomerModel.getCustomerVehicleType() + "\"," +
                         "\"customerFuelType\":" + "\"" + CustomerModel.getCustomerFuelType() + "\"," +
                         "\"awaitingTime\":" + "\"" + CustomerModel.getAwaitingTime() + "\"," +
-                        "\"token\":" + "\"" + Integer.parseInt(newToken) + "\"," +
-                        "\"arrivalTimeQ\":" + "\"" + dtf.format(arrTime) + "\"," +
+                       // "\"token\":" + "\"" + Integer.parseInt(newToken) + "\"," +
+                        "\"token\":" + "\"" + newToken + "\"," +
+                       // "\"arrivalTimeQ\":" + "\"" + dtf.format(arrTime) + "\"," +
+                       "\"arrivalTimeQ\":" + "\"" + arrTime + "\"," +
                         "\"departTimeQ\":" + "\"" + CustomerModel.getDepartTimeQ() + "\"," +
                         "\"requestedLitres\":" + "\"" + CustomerModel.getRequestedLitres() + "\"," +
                         "\"shedQ\":" + "\"" + station + "\"" +"}";
@@ -331,6 +334,7 @@ public class ReqFuelVolume extends AppCompatActivity {
                                     jsonObject.optInt("requestedLitres"),
                                     jsonObject.getString("shedQ")
                             );
+                            System.out.println("checking get data by id-" + "-email-" + customerModel.getCustomerEmail() + "-Fid-" + customerModel.getId() + "-FType-" + customerModel.getCustomerFuelType() + "-vType-" + customerModel.getCustomerVehicleType() + "-token-" + customerModel.getToken() + "-shedQ-" + customerModel.getShedQ() + "-arrTime-" + customerModel.getArrivalTimeQ() + "-awaitTime-" + customerModel.getAwaitingTime() + "-deptime-" + customerModel.getDepartTimeQ() + "-req litres-" + customerModel.getRequestedLitres());
                             CustomerModel = customerModel;
 
                         } catch (JSONException e) {
